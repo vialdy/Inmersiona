@@ -282,12 +282,12 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                   <div>
                     <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
                       <h3 className="text-lg font-bold text-white">Calculadora de Optimización</h3>
-                      <span className="text-[10px] text-slate-400 font-mono tracking-widest uppercase">Inputs</span>
+                      <span className="text-[10px] text-white/80 font-mono tracking-widest uppercase font-semibold">Parámetros</span>
                     </div>
 
                     {/* SUGGESTED PRESETS */}
                     <div className="mb-8 bg-black/20 p-4 rounded-xl border border-white/5">
-                      <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+                      <span className="text-xs font-bold uppercase tracking-wider text-white block mb-2.5">
                         Cargar perfil sugerido por tamaño:
                       </span>
                       <div className="grid grid-cols-3 gap-2">
@@ -297,7 +297,7 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                           className={`px-3 py-2 rounded-lg text-xs font-bold border transition-all duration-150 cursor-pointer ${
                             activePreset === "pequena"
                               ? "border-[#c2410c] bg-[#c2410c]/25 text-white shadow-[0_0_15px_rgba(194,65,12,0.2)]"
-                              : "border-white/10 bg-white/5 text-slate-300 hover:bg-white/10 hover:border-white/20"
+                              : "border-white/10 bg-white/5 text-slate-100 hover:text-white hover:border-white/20"
                           }`}
                         >
                           Pyme Pequeña
@@ -308,7 +308,7 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                           className={`px-3 py-2 rounded-lg text-xs font-bold border transition-all duration-150 cursor-pointer ${
                             activePreset === "mediana"
                               ? "border-[#c2410c] bg-[#c2410c]/25 text-white shadow-[0_0_15px_rgba(194,65,12,0.2)]"
-                              : "border-white/10 bg-white/5 text-slate-300 hover:bg-white/10 hover:border-white/20"
+                              : "border-white/10 bg-white/5 text-slate-100 hover:text-white hover:border-white/20"
                           }`}
                         >
                           Pyme Mediana
@@ -319,7 +319,7 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                           className={`px-3 py-2 rounded-lg text-xs font-bold border transition-all duration-150 cursor-pointer ${
                             activePreset === "grande"
                               ? "border-[#c2410c] bg-[#c2410c]/25 text-white shadow-[0_0_15px_rgba(194,65,12,0.2)]"
-                              : "border-white/10 bg-white/5 text-slate-300 hover:bg-white/10 hover:border-white/20"
+                              : "border-white/10 bg-white/5 text-slate-100 hover:text-white hover:border-white/20"
                           }`}
                         >
                           Pyme Grande
@@ -331,16 +331,16 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                       {/* Slider 1: Hours Lost */}
                       <div>
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 mb-2">
-                          <label htmlFor="hours-lost-range" className="text-sm font-semibold text-slate-200">
+                          <label htmlFor="hours-lost-range" className="text-sm font-bold text-white">
                             Horas ineficientes al mes
                           </label>
-                          <span className="text-[10px] text-slate-400">(Reprocesos, ETLs, tareas manuales)</span>
+                          <span className="text-[10px] text-slate-200 font-medium">(Reprocesos, ETLs, tareas manuales)</span>
                         </div>
                         <div className="flex items-center gap-2 mb-3">
                           <button
                             type="button"
                             onClick={() => adjustValue(setHoursLost, hoursLost, 10, 500, 5, false)}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-slate-200 font-bold transition-all cursor-pointer text-base"
+                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-white font-bold transition-all cursor-pointer text-base"
                             aria-label="Disminuir horas"
                           >
                             -
@@ -356,12 +356,12 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                               }}
                               className="w-16 bg-transparent text-center font-mono text-lg font-extrabold text-[#c2410c] focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             />
-                            <span className="text-xs text-slate-400 font-sans font-medium">h / mes</span>
+                            <span className="text-xs text-slate-200 font-sans font-medium">h / mes</span>
                           </div>
                           <button
                             type="button"
                             onClick={() => adjustValue(setHoursLost, hoursLost, 10, 500, 5, true)}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-slate-200 font-bold transition-all cursor-pointer text-base"
+                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-white font-bold transition-all cursor-pointer text-base"
                             aria-label="Aumentar horas"
                           >
                             +
@@ -382,16 +382,16 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                       {/* Slider 2: Hourly Rate */}
                       <div>
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 mb-2">
-                          <label htmlFor="hourly-rate-range" className="text-sm font-semibold text-slate-200">
+                          <label htmlFor="hourly-rate-range" className="text-sm font-bold text-white">
                             Coste medio hora de personal
                           </label>
-                          <span className="text-[10px] text-slate-400">(Coste empresa con impuestos y SS)</span>
+                          <span className="text-[10px] text-slate-200 font-medium">(Coste empresa con impuestos y SS)</span>
                         </div>
                         <div className="flex items-center gap-2 mb-3">
                           <button
                             type="button"
                             onClick={() => adjustValue(setHourlyRate, hourlyRate, 15, 100, 1, false)}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-slate-200 font-bold transition-all cursor-pointer text-base"
+                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-white font-bold transition-all cursor-pointer text-base"
                             aria-label="Disminuir coste"
                           >
                             -
@@ -407,12 +407,12 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                               }}
                               className="w-12 bg-transparent text-center font-mono text-lg font-extrabold text-[#c2410c] focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             />
-                            <span className="text-xs text-slate-400 font-sans font-medium">€ / h</span>
+                            <span className="text-xs text-slate-200 font-sans font-medium">€ / h</span>
                           </div>
                           <button
                             type="button"
                             onClick={() => adjustValue(setHourlyRate, hourlyRate, 15, 100, 1, true)}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-slate-200 font-bold transition-all cursor-pointer text-base"
+                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-white font-bold transition-all cursor-pointer text-base"
                             aria-label="Aumentar coste"
                           >
                             +
@@ -433,16 +433,16 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                       {/* Slider 3: Investment */}
                       <div>
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 mb-2">
-                          <label htmlFor="investment-range" className="text-sm font-semibold text-slate-200">
+                          <label htmlFor="investment-range" className="text-sm font-bold text-white">
                             Presupuesto estimado de optimización
                           </label>
-                          <span className="text-[10px] text-slate-400">(Inversión para simplificar procesos)</span>
+                          <span className="text-[10px] text-slate-200 font-medium">(Inversión para simplificar procesos)</span>
                         </div>
                         <div className="flex items-center gap-2 mb-3">
                           <button
                             type="button"
                             onClick={() => adjustValue(setInvestment, investment, 2000, 50000, 500, false)}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-slate-200 font-bold transition-all cursor-pointer text-base"
+                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-white font-bold transition-all cursor-pointer text-base"
                             aria-label="Disminuir inversión"
                           >
                             -
@@ -458,12 +458,12 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                               }}
                               className="w-20 bg-transparent text-center font-mono text-lg font-extrabold text-[#c2410c] focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                             />
-                            <span className="text-xs text-slate-400 font-sans font-medium">€</span>
+                            <span className="text-xs text-slate-200 font-sans font-medium">€</span>
                           </div>
                           <button
                             type="button"
                             onClick={() => adjustValue(setInvestment, investment, 2000, 50000, 500, true)}
-                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-slate-200 font-bold transition-all cursor-pointer text-base"
+                            className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center text-white font-bold transition-all cursor-pointer text-base"
                             aria-label="Aumentar inversión"
                           >
                             +
@@ -487,40 +487,40 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
 
               {/* Calculator Results Dashboard */}
               <ScrollReveal variant="slide-left" delay={200}>
-                <article className="rounded-2xl border border-white/15 bg-[#0b1421] p-6 sm:p-8 flex flex-col justify-between shadow-xl shadow-black/25 h-full relative overflow-hidden">
+                <article className="rounded-2xl border border-white/15 bg-[#0b1421] p-8 sm:p-10 flex flex-col justify-between shadow-xl shadow-black/25 h-full relative overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(194,65,12,0.03),transparent_50%)] pointer-events-none" />
                   
                   <div>
-                    <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-                      <h3 className="text-base font-bold text-white">Resultados de Ahorro Proyectados</h3>
+                    <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                      <h3 className="text-lg font-bold text-white tracking-wide">Resultados de Ahorro Proyectados</h3>
                       <span className="text-[10px] text-emerald-400 font-mono tracking-widest uppercase font-bold animate-pulse">Live</span>
                     </div>
                     
-                    <div className="grid gap-6">
-                      <div className="bg-black/50 border border-[#c2410c]/25 rounded-2xl p-5 shadow-inner">
-                        <p className="text-[10px] text-slate-400 uppercase tracking-widest font-extrabold mb-1">Ahorro Neto Proyectado (12 meses)</p>
-                        <p className="text-3xl sm:text-4xl font-extrabold text-[#c2410c] font-mono tracking-tight">
+                    <div className="grid gap-8">
+                      <div className="bg-black/60 border border-[#c2410c]/30 rounded-2xl p-6 sm:p-7 shadow-inner">
+                        <p className="text-xs text-white uppercase tracking-widest font-extrabold mb-2">Ahorro Neto Proyectado (12 meses)</p>
+                        <p className="text-4xl sm:text-5xl font-black text-[#c2410c] font-mono tracking-tight drop-shadow-[0_2px_10px_rgba(194,65,12,0.15)]">
                           {formatCurrency(annualSavings - investment)}
                         </p>
-                        <p className="text-[10px] text-slate-400 mt-2.5">
-                          Ahorro bruto anual de <span className="text-white font-mono">{formatCurrency(annualSavings)}</span> menos inversión de <span className="text-white font-mono">{formatCurrency(investment)}</span>.
+                        <p className="text-xs sm:text-sm text-slate-200 mt-4 leading-relaxed">
+                          Ahorro bruto anual de <span className="text-white font-semibold font-mono">{formatCurrency(annualSavings)}</span> menos inversión de <span className="text-white font-semibold font-mono">{formatCurrency(investment)}</span>.
                         </p>
                       </div>
                       
-                      <div className="grid grid-cols-3 gap-2 sm:gap-4 border-t border-white/5 pt-4">
-                        <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 text-center">
-                          <p className="text-[9px] text-slate-400 uppercase font-bold tracking-wide">Tiempo Libre</p>
-                          <p className="text-sm sm:text-base font-extrabold text-white mt-1 font-mono">{hoursRecoveredPerYear}h<span className="text-[9px] text-slate-500 font-sans font-medium">/año</span></p>
+                      <div className="grid grid-cols-3 gap-3 sm:gap-5 border-t border-white/10 pt-6 mt-2">
+                        <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-md">
+                          <p className="text-[10px] sm:text-xs text-white uppercase font-bold tracking-wide mb-1.5">Tiempo Libre</p>
+                          <p className="text-sm sm:text-base font-black text-white font-mono">{hoursRecoveredPerYear}h<span className="text-[9px] text-slate-300 font-sans font-medium block sm:inline ml-0.5">/año</span></p>
                         </div>
-                        <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 text-center">
-                          <p className="text-[9px] text-slate-400 uppercase font-bold tracking-wide">Retorno (ROI)</p>
-                          <p className={`text-sm sm:text-base font-extrabold mt-1 font-mono ${netRoi > 0 ? "text-emerald-400" : "text-rose-400"}`}>
+                        <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-md">
+                          <p className="text-[10px] sm:text-xs text-white uppercase font-bold tracking-wide mb-1.5">Retorno (ROI)</p>
+                          <p className={`text-sm sm:text-base font-black font-mono ${netRoi > 0 ? "text-emerald-400" : "text-rose-400"}`}>
                             {netRoi > 0 ? `+${netRoi}%` : `${netRoi}%`}
                           </p>
                         </div>
-                        <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3 text-center">
-                          <p className="text-[9px] text-slate-400 uppercase font-bold tracking-wide">Amortizado</p>
-                          <p className="text-xs sm:text-sm font-extrabold text-white mt-1 font-mono leading-none py-1">
+                        <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-md">
+                          <p className="text-[10px] sm:text-xs text-white uppercase font-bold tracking-wide mb-1.5">Amortizado</p>
+                          <p className="text-xs sm:text-sm font-black text-white font-mono leading-snug py-0.5">
                             {paybackPeriodMonths}
                           </p>
                         </div>
@@ -528,11 +528,11 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                     </div>
                   </div>
 
-                  <div className="mt-8">
-                    <div className="rounded-xl bg-white/[0.03] border border-white/5 p-4 text-xs text-slate-300 leading-relaxed">
-                      <strong className="text-white block mb-1">Cálculo de eficiencia conservador:</strong> 
+                  <div className="mt-10 sm:mt-12">
+                    <div className="rounded-2xl bg-white/[0.02] border border-white/10 p-5 sm:p-6 text-xs sm:text-sm text-slate-200 leading-relaxed shadow-sm">
+                      <strong className="text-white block mb-1.5 font-bold">Cálculo de eficiencia conservador:</strong> 
                       Asume recuperar el 80% del tiempo de ineficiencia reportado en base a auditorías previas de optimización de procesos.
-                      <code className="block mt-2 font-mono text-[10px] text-orange-400/90">
+                      <code className="block mt-3 font-mono text-[10px] sm:text-xs text-orange-400/90 bg-black/30 p-2 rounded-lg border border-white/5">
                         ROI Neto = ((Ahorro Anual - Inversión) / Inversión) x 100
                       </code>
                     </div>
