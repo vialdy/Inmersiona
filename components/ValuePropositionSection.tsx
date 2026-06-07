@@ -127,9 +127,6 @@ export function ValuePropositionSection() {
                         Socio de Operaciones en Inmersiona
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c2410c]/10 text-[10px] font-black tracking-wider text-[#c2410c] uppercase">
-                      Garantía Gemba
-                    </span>
                   </div>
 
                   <div className="mt-5 border-t border-[#dee6ed]/60 pt-5 relative">
