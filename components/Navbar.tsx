@@ -39,6 +39,7 @@ export function Navbar() {
     const handleScroll = () => {
       if (window.scrollY < 80) {
         setActiveWidth("max-w-7xl");
+        setActiveHash("");
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -46,6 +47,7 @@ export function Navbar() {
     // Initial scroll position check
     if (window.scrollY < 80) {
       setActiveWidth("max-w-7xl");
+      setActiveHash("");
     }
 
     // Intersection observer for section tracking
