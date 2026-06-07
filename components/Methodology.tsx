@@ -356,22 +356,8 @@ export function Methodology() {
                             </svg>
                           )
                         ) : isCompleted ? (
-                          <svg className="h-7 w-7 sm:h-8 sm:w-8" viewBox="0 0 15 15" fill="currentColor" style={{ shapeRendering: "crispEdges" }}>
-                            <rect x="5" y="0" width="6" height="1" />
-                            <rect x="3" y="1" width="10" height="1" />
-                            <rect x="2" y="2" width="12" height="1" />
-                            <rect x="1" y="3" width="14" height="1" />
-                            <rect x="1" y="4" width="12" height="1" />
-                            <rect x="0" y="5" width="10" height="1" />
-                            <rect x="0" y="6" width="8" height="1" />
-                            <rect x="0" y="7" width="6" height="1" />
-                            <rect x="0" y="8" width="8" height="1" />
-                            <rect x="0" y="9" width="10" height="1" />
-                            <rect x="1" y="10" width="12" height="1" />
-                            <rect x="1" y="11" width="14" height="1" />
-                            <rect x="2" y="12" width="12" height="1" />
-                            <rect x="3" y="13" width="10" height="1" />
-                            <rect x="5" y="14" width="6" height="1" />
+                          <svg className="h-6 w-6 sm:h-7 sm:w-7" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12 L20.66 7 A10 10 0 1 0 20.66 17 Z" />
                           </svg>
                         ) : (
                           phases[idx]?.num
