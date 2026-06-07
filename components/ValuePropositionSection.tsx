@@ -100,9 +100,9 @@ export function ValuePropositionSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center items-start">
           
           {/* Left Column: Consultant Profile Card (Clean, static, perfectly proportioned) */}
-          <div className="col-span-12 lg:col-span-5">
-            <ScrollReveal variant="slide-right">
-              <div className="relative overflow-hidden rounded-2xl border border-[#dee6ed] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md">
+          <div className="col-span-12 lg:col-span-5 flex justify-center w-full">
+            <ScrollReveal variant="slide-right" className="w-full flex justify-center">
+              <div className="relative overflow-hidden rounded-2xl border border-[#dee6ed] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md w-full max-w-md lg:max-w-none">
                 
                 {/* Profile Image Wrap */}
                 <div className="relative w-full h-[360px] sm:h-[400px] lg:h-[340px] xl:h-[380px] overflow-hidden rounded-xl bg-slate-100 border border-[#dee6ed]/40">
@@ -118,7 +118,7 @@ export function ValuePropositionSection() {
 
                 {/* Consultant Info & Quote */}
                 <div className="mt-6">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-3 w-full">
                     <div>
                       <h3 className="text-xl font-extrabold text-[#132339] tracking-tight">
                         Ignacio de la Torre
@@ -142,7 +142,7 @@ export function ValuePropositionSection() {
                     </p>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-2.5 pt-4 border-t border-[#dee6ed]/40">
+                  <div className="mt-5 flex flex-wrap justify-center sm:justify-start gap-2.5 pt-4 border-t border-[#dee6ed]/40">
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700">
                       <svg className="h-4 w-4 text-[#c2410c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4" />
@@ -167,8 +167,8 @@ export function ValuePropositionSection() {
             
             {/* Section Header */}
             <ScrollReveal variant="slide-left" delay={50}>
-              <article className="mb-6">
-                <span className="inline-flex px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-[#1a4066]/10 text-[#132339] mb-4">
+              <article className="mb-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+                <span className="inline-flex px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-[#1a4066]/10 text-[#132339] mb-4 mx-auto lg:mx-0">
                   Valor Añadido
                 </span>
                 <h2
@@ -177,13 +177,13 @@ export function ValuePropositionSection() {
                 >
                   Garantías reales: Impacto directo medido en el puesto de trabajo
                 </h2>
-                <div className="mt-4 h-1 w-12 bg-[#c2410c] rounded" />
+                <div className="mt-4 h-1 w-12 bg-[#c2410c] rounded mx-auto lg:mx-0" />
               </article>
             </ScrollReveal>
 
             {/* Accent Callout Block with a smooth text rotation and min-height to prevent layout shifts */}
             <ScrollReveal variant="slide-left" delay={150}>
-              <div className="relative overflow-hidden rounded-2xl border-l-4 border-[#c2410c] bg-[#c2410c]/5 p-6 sm:p-8 border-y border-r border-[#dee6ed]/60 transition-all duration-300 hover:shadow-sm mb-6 min-h-[110px] sm:min-h-[96px] flex items-center">
+              <div className="relative overflow-hidden rounded-2xl border-l-4 border-[#c2410c] bg-[#c2410c]/5 p-6 sm:p-8 border-y border-r border-[#dee6ed]/60 transition-all duration-300 hover:shadow-sm mb-6 min-h-[110px] sm:min-h-[96px] flex items-center justify-center text-center lg:text-left lg:justify-start">
                 <div className="absolute top-0 right-0 h-32 w-32 bg-[radial-gradient(circle_at_100%_0%,rgba(194,65,12,0.06),transparent_70%)] pointer-events-none" />
                 <p
                   className={`text-lg sm:text-xl font-extrabold tracking-tight text-[#132339] leading-relaxed relative z-10 transition-opacity duration-500 ${
@@ -201,7 +201,7 @@ export function ValuePropositionSection() {
               {/* Card 1: Diagnóstico Rápido */}
               <ScrollReveal variant="slide-up" delay={100}>
                 <article
-                  className="group flex flex-col sm:flex-row gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
+                  className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
                 >
                   {/* Icon Block with Hover Micro-Animation */}
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#c2410c]/10 border border-[#c2410c]/20">
@@ -219,7 +219,7 @@ export function ValuePropositionSection() {
 
                   {/* Content Block */}
                   <div className="flex-1 flex flex-col justify-between gap-2.5">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2">
                       <h3 className="text-lg font-bold text-[#132339] leading-snug">
                         Diagnóstico Rápido
                       </h3>
@@ -237,7 +237,7 @@ export function ValuePropositionSection() {
               {/* Card 2: Revisado con Usuarios */}
               <ScrollReveal variant="slide-up" delay={200}>
                 <article
-                  className="group flex flex-col sm:flex-row gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
+                  className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
                 >
                   {/* Icon Block with Hover Micro-Animation */}
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#c2410c]/10 border border-[#c2410c]/20">
@@ -264,7 +264,7 @@ export function ValuePropositionSection() {
 
                   {/* Content Block */}
                   <div className="flex-1 flex flex-col justify-between gap-2.5">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2">
                       <h3 className="text-lg font-bold text-[#132339] leading-snug">
                         Revisado con Usuarios
                       </h3>
@@ -282,7 +282,7 @@ export function ValuePropositionSection() {
               {/* Card 3: Soluciones Aterrizadas */}
               <ScrollReveal variant="slide-up" delay={300}>
                 <article
-                  className="group flex flex-col sm:flex-row gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
+                  className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
                 >
                   {/* Icon Block with Hover Micro-Animation */}
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#c2410c]/10 border border-[#c2410c]/20">
@@ -301,7 +301,7 @@ export function ValuePropositionSection() {
 
                   {/* Content Block */}
                   <div className="flex-1 flex flex-col justify-between gap-2.5">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2">
                       <h3 className="text-lg font-bold text-[#132339] leading-snug">
                         Soluciones Aterrizadas
                       </h3>
