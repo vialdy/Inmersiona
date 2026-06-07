@@ -194,7 +194,7 @@ export function Methodology({ hideHeader = false }: MethodologyProps) {
     <section
       id="methodology"
       aria-labelledby="methodology-title"
-      className="bg-[#f8fafc]/70 backdrop-blur-sm border-y border-[#dee6ed] px-5 py-20 text-[#132339] sm:px-6 sm:py-24 lg:px-8 overflow-hidden"
+      className="bg-white border-y border-[#dee6ed] px-5 py-20 text-[#132339] sm:px-6 sm:py-24 lg:px-8 overflow-hidden"
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* Section Header */}

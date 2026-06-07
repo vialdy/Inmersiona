@@ -128,7 +128,11 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
     <section
       id="roi"
       aria-labelledby="roi-title"
-      className="relative overflow-hidden bg-[#132339]"
+      className={`relative overflow-hidden ${
+        hideHeader 
+          ? "bg-transparent" 
+          : "bg-gradient-to-br from-[#132339] via-[#0f1d30] to-[#0a1421]"
+      }`}
     >
       {/* ═══════════════════════════════════════════════════════════════
           PHASE 1 — Cinematic Video Intro
@@ -238,7 +242,11 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
           PHASE 2 — Interactive Calculator + Comparison Table
           ═══════════════════════════════════════════════════════════════ */}
       {showCalculator && (
-        <div className="relative bg-[#132339] px-5 py-20 text-white sm:px-6 sm:py-24 lg:px-8">
+        <div className={`relative px-5 py-20 text-white sm:px-6 sm:py-24 lg:px-8 ${
+          hideHeader 
+            ? "bg-transparent" 
+            : "bg-gradient-to-br from-[#132339] via-[#0f1d30] to-[#0a1421]"
+        }`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(194,65,12,0.06),transparent_40%)]" />
           
           <div className="relative z-20 mx-auto w-full max-w-6xl">

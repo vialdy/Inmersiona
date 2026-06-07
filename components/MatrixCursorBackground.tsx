@@ -146,6 +146,8 @@ export function MatrixCursorBackground() {
     const buildAvoidRects = () => {
       const rects: AvoidRect[] = [];
       const seen = new Set<Element>();
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
 
       // Walk all visible elements and collect rects for those we should avoid
       const allElements = document.querySelectorAll("*");
@@ -161,10 +163,10 @@ export function MatrixCursorBackground() {
           // Only collect elements that are actually visible
           if (rect.width > 0 && rect.height > 0) {
             rects.push({
-              left: rect.left,
-              top: rect.top,
-              right: rect.right,
-              bottom: rect.bottom,
+              left: rect.left + scrollX,
+              top: rect.top + scrollY,
+              right: rect.right + scrollX,
+              bottom: rect.bottom + scrollY,
             });
           }
         }
@@ -176,9 +178,11 @@ export function MatrixCursorBackground() {
 
     // Check if a point (in viewport coords) hits any avoid rect
     const isPointInAvoidZone = (px: number, py: number): boolean => {
+      const pageX = px + window.scrollX;
+      const pageY = py + window.scrollY;
       for (let i = 0; i < avoidRects.length; i++) {
         const r = avoidRects[i];
-        if (px >= r.left && px <= r.right && py >= r.top && py <= r.bottom) {
+        if (pageX >= r.left && pageX <= r.right && pageY >= r.top && pageY <= r.bottom) {
           return true;
         }
       }
@@ -330,11 +334,6 @@ export function MatrixCursorBackground() {
 
     animate();
 
-    // Mark avoid rects as stale on scroll/resize so they get rebuilt next frame
-    const markStale = () => {
-      avoidRectsStale = true;
-    };
-
     const handleResize = () => {
       initGrid();
       avoidRectsStale = true;
@@ -358,13 +357,11 @@ export function MatrixCursorBackground() {
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    window.addEventListener("scroll", markStale, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", markStale);
       document.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
