@@ -358,8 +358,22 @@ export function Methodology() {
                             </svg>
                           )
                         ) : isCompleted ? (
-                          <svg className="h-8 w-8" viewBox="0 0 13 13" fill="currentColor" style={{ shapeRendering: "crispEdges" }}>
-                            <path d="M4 0 h6 v1 h2 v1 h1 v2 h-4 v1 h-2 v1 h-2 v1 h2 v1 h2 v1 h4 v2 h-1 v1 h-2 v1 h-6 v-1 h-2 v-1 h-1 v-1 h-1 v-7 h1 v-1 h1 v-1 h2 v-1 Z" />
+                          <svg className="h-7 w-7 sm:h-8 sm:w-8" viewBox="0 0 15 15" fill="currentColor" style={{ shapeRendering: "crispEdges" }}>
+                            <rect x="5" y="0" width="6" height="1" />
+                            <rect x="3" y="1" width="10" height="1" />
+                            <rect x="2" y="2" width="12" height="1" />
+                            <rect x="1" y="3" width="14" height="1" />
+                            <rect x="1" y="4" width="12" height="1" />
+                            <rect x="0" y="5" width="10" height="1" />
+                            <rect x="0" y="6" width="8" height="1" />
+                            <rect x="0" y="7" width="6" height="1" />
+                            <rect x="0" y="8" width="8" height="1" />
+                            <rect x="0" y="9" width="10" height="1" />
+                            <rect x="1" y="10" width="12" height="1" />
+                            <rect x="1" y="11" width="14" height="1" />
+                            <rect x="2" y="12" width="12" height="1" />
+                            <rect x="3" y="13" width="10" height="1" />
+                            <rect x="5" y="14" width="6" height="1" />
                           </svg>
                         ) : (
                           phases[idx]?.num
@@ -495,7 +509,7 @@ export function Methodology() {
 
                   {/* CTA Button */}
                   <a
-                    href="#contact"
+                    href="/#contact"
                     className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#c2410c] text-white text-base font-bold shadow-lg shadow-[#c2410c]/25 hover:bg-[#a1350a] hover:shadow-xl hover:shadow-[#c2410c]/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
                   >
                     <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

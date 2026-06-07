@@ -68,31 +68,16 @@ export function ContactForm() {
             
             <ul className="mt-8 space-y-4">
               {[
-                {
-                  title: "Hipótesis preliminar sin coste",
-                  desc: "Te planteamos una hoja de ruta técnica inicial sin ningún compromiso de permanencia."
-                },
-                {
-                  title: "Confidencialidad total",
-                  desc: "Tus bases de datos, flujos de ETL, integraciones y telefonía están 100% seguros."
-                },
-                {
-                  title: "Foco en tu equipo in-house",
-                  desc: "Diseñamos soluciones realistas priorizando la ejecución de tus propios desarrolladores internos."
-                },
-                {
-                  title: "Procesos antes que IA",
-                  desc: "Saneamos y optimizamos tu operativa real paso a paso antes de aplicar automatización algorítmica."
-                }
+                "Hipótesis preliminar sin coste",
+                "Confidencialidad total",
+                "Foco en tu equipo in-house",
+                "Procesos antes que IA"
               ].map((item, idx) => (
-                <li key={idx} className="flex gap-3">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c2410c]/10 text-xs font-bold text-[#c2410c] mt-0.5">
+                <li key={idx} className="flex items-center gap-3">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c2410c]/10 text-xs font-bold text-[#c2410c]">
                     ✓
                   </span>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#132339]">{item.title}</h4>
-                    <p className="text-xs text-[#667b99] mt-0.5">{item.desc}</p>
-                  </div>
+                  <span className="text-sm font-bold text-[#132339]">{item}</span>
                 </li>
               ))}
             </ul>
