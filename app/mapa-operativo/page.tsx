@@ -149,63 +149,66 @@ export default function MapaOperativoPage() {
             {/* Right: Focused single active step detailed card with premium fadeInUp animation (Fixed height to prevent oscillation) */}
             <div className="flex flex-col justify-start">
               <article
-                key={step.idx}
-                className="relative rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] backdrop-blur-md p-6 sm:p-8 shadow-2xl shadow-black/40 animate-fade-in-up-detail flex flex-col justify-between h-auto md:h-[640px] lg:h-[640px] overflow-hidden"
+                className="relative rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] backdrop-blur-md p-6 sm:p-8 shadow-2xl shadow-black/40 flex flex-col justify-between h-auto md:h-[640px] lg:h-[640px] overflow-hidden"
               >
-                {/* Header status and KPI badge */}
-                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5 mb-5">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c2410c]/10 border border-[#c2410c]/30 text-base font-black text-[#c2410c]">
-                      {step.num}
-                    </span>
-                    <div>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block leading-none mb-1">Metodología</span>
-                      <span className="text-sm font-black text-white uppercase tracking-wider leading-none">Fase Operativa</span>
+                <div key={step.idx} className="animate-fade-in-up-detail flex flex-col justify-between h-full">
+                  {/* Header status and KPI badge */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5 mb-5">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c2410c]/10 border border-[#c2410c]/30 text-base font-black text-[#c2410c]">
+                        {step.num}
+                      </span>
+                      <div>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block leading-none mb-1">Metodología</span>
+                        <span className="text-sm font-black text-white uppercase tracking-wider leading-none">Fase Operativa</span>
+                      </div>
                     </div>
+                    <span className="inline-flex px-3 py-1 rounded-md text-[11px] font-black tracking-wider uppercase bg-[#1a4066]/30 border border-[#1a4066]/50 text-slate-300">
+                      {step.kpi}
+                    </span>
                   </div>
-                  <span className="inline-flex px-3 py-1 rounded-md text-[11px] font-black tracking-wider uppercase bg-[#1a4066]/30 border border-[#1a4066]/50 text-slate-300">
-                    {step.kpi}
-                  </span>
-                </div>
 
-                {/* Main description */}
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                    {step.title}
-                  </h2>
-                  <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-200 font-medium">
-                    {step.desc}
-                  </p>
-                </div>
-
-                {/* Deliverables list */}
-                <div className="mt-6 pt-5 border-t border-white/5">
-                  <h3 className="text-xs font-bold text-slate-300 tracking-wider uppercase mb-3.5 flex items-center gap-2">
-                    <svg className="h-4.5 w-4.5 text-[#c2410c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Entregables Concretos de esta Fase
-                  </h3>
-                  <ul className="space-y-2.5">
-                    {step.deliverables.map((del, dIdx) => (
-                      <li key={dIdx} className="flex gap-2.5 items-start text-xs sm:text-sm text-slate-300">
-                        <span className="h-2 w-2 rounded-full bg-[#c2410c] shrink-0 mt-1.5 shadow-[0_0_6px_#c2410c]" />
-                        <span className="leading-relaxed">{del}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Highlighted KPI block */}
-                <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-[#c2410c]/12 to-[#c2410c]/6 border border-[#c2410c]/25 flex items-center gap-4 shadow-inner">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#c2410c] shadow-lg shadow-[#c2410c]/25">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
+                  {/* Main description */}
                   <div>
-                    <span className="text-[10px] font-bold text-[#c2410c] uppercase tracking-widest block font-black leading-none mb-1">Métrica Clave Esperada</span>
-                    <span className="text-sm sm:text-base font-extrabold text-white block">{step.metric}</span>
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                      {step.title}
+                    </h2>
+                    <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-200 font-medium">
+                      {step.desc}
+                    </p>
+                  </div>
+
+                  {/* Deliverables list */}
+                  <div className="mt-6 pt-5 border-t border-white/5">
+                    <h3 className="text-xs font-bold text-slate-300 tracking-wider uppercase mb-3.5 flex items-center gap-2">
+                      <svg className="h-4.5 w-4.5 text-[#c2410c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Entregables Concretos de esta Fase
+                    </h3>
+                    <ul className="space-y-2.5">
+                      {step.deliverables.map((del, dIdx) => (
+                        <li key={dIdx} className="flex gap-2.5 items-start text-xs sm:text-sm text-slate-300">
+                          <span className="h-2 w-2 rounded-full bg-[#c2410c] shrink-0 mt-1.5 shadow-[0_0_6px_#c2410c]" />
+                          <span className="leading-relaxed">{del}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Highlighted KPI block */}
+                  <div className="mt-auto pt-6">
+                    <div className="p-4 rounded-xl bg-gradient-to-r from-[#c2410c]/12 to-[#c2410c]/6 border border-[#c2410c]/25 flex items-center gap-4 shadow-inner">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#c2410c] shadow-lg shadow-[#c2410c]/25">
+                        <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold text-[#c2410c] uppercase tracking-widest block font-black leading-none mb-1">Métrica Clave Esperada</span>
+                        <span className="text-sm sm:text-base font-extrabold text-white block">{step.metric}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </article>
