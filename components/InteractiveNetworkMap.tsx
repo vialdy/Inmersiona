@@ -126,7 +126,7 @@ export function InteractiveNetworkMap() {
 
       {/* Constellation & Spain Outline SVG Container - Margins tightened and viewBox cropped to reduce spacing */}
       {/* Constellation & Spain Outline SVG Container - Margins tightened and viewBox cropped to reduce spacing (Desktop Only) */}
-      <div className="hidden md:flex relative w-full h-[440px] mt-2 mb-4 justify-center items-center">
+      <div className="hidden md:flex relative w-full h-[300px] lg:h-[340px] mt-0 mb-2 justify-center items-center">
         <svg
           viewBox="0 100 900 540"
           className="w-full h-full select-none"

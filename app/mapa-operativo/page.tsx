@@ -150,7 +150,7 @@ export default function MapaOperativoPage() {
             <div className="flex flex-col justify-start">
               <article
                 key={step.idx}
-                className="relative rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] backdrop-blur-md p-6 sm:p-8 shadow-2xl shadow-black/40 animate-fade-in-up-detail flex flex-col justify-between h-auto md:h-[570px] lg:h-[570px] overflow-hidden"
+                className="relative rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] backdrop-blur-md p-6 sm:p-8 shadow-2xl shadow-black/40 animate-fade-in-up-detail flex flex-col justify-between h-auto md:min-h-[570px] lg:min-h-[570px] overflow-hidden"
               >
                 {/* Header status and KPI badge */}
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5 mb-5">

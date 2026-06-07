@@ -347,8 +347,8 @@ export function Methodology() {
                       >
                         {isCTA ? (
                           isCompleted || isActive ? (
-                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M 12 12 L 20.66 7 A 10 10 0 1 0 20.66 17 Z" />
                             </svg>
                           ) : (
                             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -356,8 +356,8 @@ export function Methodology() {
                             </svg>
                           )
                         ) : isCompleted ? (
-                          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M 12 12 L 20.66 7 A 10 10 0 1 0 20.66 17 Z" />
                           </svg>
                         ) : (
                           phases[idx]?.num

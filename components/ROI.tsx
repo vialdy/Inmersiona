@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { ScrollReveal } from "./ScrollReveal";
 
 const roiRows = [
@@ -31,7 +32,11 @@ const roiRows = [
   },
 ];
 
-export function ROI() {
+interface ROIProps {
+  hideCasesTable?: boolean;
+}
+
+export function ROI({ hideCasesTable = false }: ROIProps) {
   // Navigation states between video phase (Phase 1) and calculator phase (Phase 2)
   const [showCalculator, setShowCalculator] = useState(false);
   const [animKey, setAnimKey] = useState(0);
@@ -152,13 +157,13 @@ export function ROI() {
                 <span className="text-xs font-medium text-slate-400/80 tracking-wide">Estimación gratuita e instantánea</span>
               </div>
 
-              {/* Scroll hint */}
-              <div className="animate-fade-in-up-delay-3 mt-16 flex flex-col items-center gap-2 text-xs text-slate-400">
-                <span>o sigue navegando</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 animate-bounce">
-                  <path fillRule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clipRule="evenodd" />
+              {/* Return hint */}
+              <Link href="/" className="group animate-fade-in-up-delay-3 mt-16 flex flex-col items-center gap-2 text-xs text-slate-400 hover:text-[#c2410c] transition-colors duration-300">
+                <span>Volver al inicio</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1">
+                  <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
                 </svg>
-              </div>
+              </Link>
             </div>
           </div>
         </ScrollReveal>
@@ -312,61 +317,63 @@ export function ROI() {
             </div>
 
             {/* Minimalist ROI Table Comparative */}
-            <ScrollReveal variant="slide-up" delay={300}>
-              <article
-                aria-labelledby="roi-table-title"
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white text-slate-900"
-              >
-                <div className="border-b border-slate-200 bg-slate-50 px-6 py-5">
-                  <h3 id="roi-table-title" className="text-lg font-bold text-[#132339]">
-                    Casos Reales de Impacto Medible
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1">Comparativa de auditorías previas realizadas en España</p>
-                </div>
-                
-                <div className="overflow-x-auto">
-                  <table className="min-w-[760px] w-full border-collapse text-left text-sm">
-                    <caption className="sr-only">
-                      Comparación de rendimiento entre optimización de facturación y saneamiento comercial CRM
-                    </caption>
-                    <thead>
-                      <tr className="border-b border-slate-200 bg-slate-100">
-                        <th scope="col" className="w-1/4 px-6 py-4 font-extrabold text-[#132339]">
-                          Métrica de Rendimiento
-                        </th>
-                        <th scope="col" className="w-3/8 px-6 py-4 font-extrabold text-[#132339]">
-                          Caso 1: Optimización de Leads e Integraciones (ETL)
-                        </th>
-                        <th scope="col" className="w-3/8 px-6 py-4 font-extrabold text-[#132339]">
-                          Caso 2: Integración Telefonía y CRM (Call Center)
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100">
-                      {roiRows.map((row) => (
-                        <tr
-                          key={row.metric}
-                          className="transition hover:bg-slate-50"
-                        >
-                          <th
-                            scope="row"
-                            className="px-6 py-4 align-top font-bold text-[#132339] text-xs bg-slate-50/50"
-                          >
-                            {row.metric}
+            {!hideCasesTable && (
+              <ScrollReveal variant="slide-up" delay={300}>
+                <article
+                  aria-labelledby="roi-table-title"
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-white text-slate-900"
+                >
+                  <div className="border-b border-slate-200 bg-slate-50 px-6 py-5">
+                    <h3 id="roi-table-title" className="text-lg font-bold text-[#132339]">
+                      Casos Reales de Impacto Medible
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-1">Comparativa de auditorías previas realizadas en España</p>
+                  </div>
+                  
+                  <div className="overflow-x-auto">
+                    <table className="min-w-[760px] w-full border-collapse text-left text-sm">
+                      <caption className="sr-only">
+                        Comparación de rendimiento entre optimización de facturación y saneamiento comercial CRM
+                      </caption>
+                      <thead>
+                        <tr className="border-b border-slate-200 bg-slate-100">
+                          <th scope="col" className="w-1/4 px-6 py-4 font-extrabold text-[#132339]">
+                            Métrica de Rendimiento
                           </th>
-                          <td className="px-6 py-4 align-top leading-6 text-slate-600 text-xs">
-                            {row.caseOne}
-                          </td>
-                          <td className="px-6 py-4 align-top leading-6 text-slate-600 text-xs">
-                            {row.caseTwo}
-                          </td>
+                          <th scope="col" className="w-3/8 px-6 py-4 font-extrabold text-[#132339]">
+                            Caso 1: Optimización de Leads e Integraciones (ETL)
+                          </th>
+                          <th scope="col" className="w-3/8 px-6 py-4 font-extrabold text-[#132339]">
+                            Caso 2: Integración Telefonía y CRM (Call Center)
+                          </th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </article>
-            </ScrollReveal>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100">
+                        {roiRows.map((row) => (
+                          <tr
+                            key={row.metric}
+                            className="transition hover:bg-slate-50"
+                          >
+                            <th
+                              scope="row"
+                              className="px-6 py-4 align-top font-bold text-[#132339] text-xs bg-slate-50/50"
+                            >
+                              {row.metric}
+                            </th>
+                            <td className="px-6 py-4 align-top leading-6 text-slate-600 text-xs">
+                              {row.caseOne}
+                            </td>
+                            <td className="px-6 py-4 align-top leading-6 text-slate-600 text-xs">
+                              {row.caseTwo}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </article>
+              </ScrollReveal>
+            )}
           </div>
         </div>
       )}

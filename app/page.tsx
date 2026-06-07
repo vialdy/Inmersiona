@@ -13,7 +13,7 @@ export default function Home() {
         <Hero />
         <ValuePropositionSection />
         <Methodology />
-        <ROI />
+        <ROI hideCasesTable />
         <ContactForm />
       </main>
     </div>
