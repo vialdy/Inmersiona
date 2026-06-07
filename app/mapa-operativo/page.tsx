@@ -118,7 +118,7 @@ export default function MapaOperativoPage() {
       `}} />
 
       {/* Main Grid Content */}
-      <main id="mapa-content" className="flex-1 bg-gradient-to-br from-[#132339]/90 via-[#0f1d30]/90 to-[#0a1421]/90 backdrop-blur-sm text-white py-12 px-5 sm:px-6 lg:px-8">
+      <main id="mapa-content" className="flex-1 bg-gradient-to-br from-[#132339]/90 via-[#0f1d30]/90 to-[#0a1421]/90 backdrop-blur-sm text-white pt-32 pb-12 lg:pt-40 px-5 sm:px-6 lg:px-8">
         <div className="relative z-20 mx-auto max-w-7xl">
           {/* Header Title Section */}
           <div className="max-w-3xl mb-12">
