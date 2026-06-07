@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+html {
+  font-size: 15px;
+}
+@media (min-width: 1536px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #132339;

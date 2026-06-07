@@ -54,7 +54,7 @@ export function Manifesto() {
             Nuestra convicción es absoluta: si trabajas **codo con codo con el personal que opera el software a diario**, puedes destapar los problemas reales que ningún reporte directivo es capaz de revelar. Lo mejor de todo es que el 90% de estas ineficiencias se resuelven habilitando y guiando a tu **propio equipo técnico in-house**, sin necesidad de costosas consultoras externas ni licencias de software adicionales.
           </p>
           
-          <ul className="mt-10 grid gap-4 sm:grid-cols-1 md:grid-cols-3">
+          <ul className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
             {auditPoints.map((point) => (
               <li
                 key={point.title}

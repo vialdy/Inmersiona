@@ -68,7 +68,7 @@ export function DetailedNetworkMap({
   const currentIdx = hoveredStep !== null ? hoveredStep : activeStep;
 
   return (
-    <div className="relative w-full h-[610px] sm:h-[570px] lg:h-[570px] flex flex-col justify-between items-center rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] p-6 backdrop-blur-sm shadow-xl shadow-black/25">
+    <div className="relative w-full h-auto min-h-[300px] md:h-[570px] lg:h-[570px] flex flex-col justify-between items-center rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] p-6 backdrop-blur-sm shadow-xl shadow-black/25">
       {/* Dynamic inline styles for active hito pulsing */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes pulseActiveLarge {
@@ -91,7 +91,7 @@ export function DetailedNetworkMap({
         }
       `}} />
 
-      <div className="flex-1 w-full flex justify-center items-center min-h-0">
+      <div className="hidden md:flex flex-1 w-full justify-center items-center min-h-0">
         <svg
           viewBox="0 100 900 540"
           className="w-full h-full select-none"
@@ -273,12 +273,39 @@ export function DetailedNetworkMap({
         </svg>
       </div>
 
+      {/* Mobile Step Selector Grid (3 columns x 2 rows - Mobile Only) */}
+      <div className="block md:hidden w-full mt-2 mb-4">
+        <div className="grid grid-cols-3 gap-3">
+          {steps.map((step, idx) => {
+            const isActive = idx === currentIdx;
+            return (
+              <button
+                key={step.num}
+                type="button"
+                onClick={() => setActiveStep(idx)}
+                className={`flex flex-col items-center justify-center p-3.5 rounded-xl border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] cursor-pointer ${
+                  isActive
+                    ? "bg-[#c2410c] border-[#c2410c] text-white shadow-lg shadow-[#c2410c]/25 scale-[1.03]"
+                    : "bg-white/[0.03] border-white/10 text-slate-300 hover:border-white/20 active:scale-[0.97]"
+                }`}
+              >
+                <span className="text-base font-black">{step.num}</span>
+                <span className="text-[10px] font-bold mt-1 text-center line-clamp-1 leading-none">
+                  {step.title.split(" ")[0]}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Help tip inside the container as a clean unified footer */}
       <div className="flex items-center justify-center gap-2 text-xs text-slate-400 border-t border-white/5 pt-4 w-full mt-2 shrink-0">
         <svg className="h-4 w-4 text-[#c2410c] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-        <span>Haz clic o pasa el cursor sobre los hitos del mapa para detallar cada paso.</span>
+        <span className="hidden md:inline">Haz clic o pasa el cursor sobre los hitos del mapa para detallar cada paso.</span>
+        <span className="inline md:hidden">Toca una fase para ver su detalle en la tarjeta inferior.</span>
       </div>
     </div>
   );

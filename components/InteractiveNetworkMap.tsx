@@ -125,7 +125,8 @@ export function InteractiveNetworkMap() {
       </div>
 
       {/* Constellation & Spain Outline SVG Container - Margins tightened and viewBox cropped to reduce spacing */}
-      <div className="relative w-full h-[360px] md:h-[440px] mt-2 mb-4 flex justify-center items-center">
+      {/* Constellation & Spain Outline SVG Container - Margins tightened and viewBox cropped to reduce spacing (Desktop Only) */}
+      <div className="hidden md:flex relative w-full h-[440px] mt-2 mb-4 justify-center items-center">
         <svg
           viewBox="0 100 900 540"
           className="w-full h-full select-none"
@@ -307,8 +308,40 @@ export function InteractiveNetworkMap() {
         </svg>
       </div>
 
+      {/* Mobile Step Selector Grid (3 columns x 2 rows - Mobile Only) */}
+      <div className="block md:hidden w-full mt-2 mb-6">
+        <div className="grid grid-cols-3 gap-3">
+          {steps.map((step, idx) => {
+            const isActive = idx === currentIdx;
+            return (
+              <button
+                key={step.num}
+                type="button"
+                onClick={() => setActiveStep(idx)}
+                className={`flex flex-col items-center justify-center p-3 rounded-xl border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] cursor-pointer ${
+                  isActive
+                    ? "bg-[#c2410c] border-[#c2410c] text-white shadow-lg shadow-[#c2410c]/25 scale-[1.03]"
+                    : "bg-white/[0.03] border-white/10 text-slate-300 hover:border-white/20 active:scale-[0.97]"
+                }`}
+              >
+                <span className="text-base font-black">{step.num}</span>
+                <span className="text-[10px] font-bold mt-1 text-center line-clamp-1 leading-none">
+                  {step.title.split(" ")[0]}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex items-center justify-center gap-2 text-[10px] text-slate-400 mt-3.5">
+          <svg className="h-3.5 w-3.5 text-[#c2410c] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Toca una fase para inspeccionar.</span>
+        </div>
+      </div>
+
       {/* Dynamic Detail Card */}
-      <div className="relative rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-5 h-[140px] overflow-hidden flex flex-col justify-center transition-all duration-300">
+      <div className="relative rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-5 h-auto min-h-[140px] md:h-[140px] overflow-hidden flex flex-col justify-center transition-all duration-300">
         <div className="absolute top-3 right-4 flex items-center gap-1">
           <span className="h-1.5 w-1.5 rounded-full bg-[#c2410c] animate-pulse" />
           <span className="text-[9px] font-bold text-slate-300 uppercase tracking-widest">
