@@ -32,7 +32,7 @@ export function ValuePropositionSection() {
     <section
       id="value-proposition"
       aria-labelledby="value-title"
-      className="bg-white border-y border-[#dee6ed] px-5 py-20 text-[#132339] sm:px-6 sm:py-24 lg:px-8"
+      className="bg-white border-y border-[#dee6ed] px-5 py-20 text-[#132339] sm:px-6 sm:py-24 lg:px-8 overflow-hidden"
     >
       {/* Self-contained styling block for unique micro-animations and staggered fade-in */}
       <style>{`
@@ -101,8 +101,8 @@ export function ValuePropositionSection() {
           
           {/* Left Column: Consultant Profile Card (Clean, static, perfectly proportioned) */}
           <div className="col-span-12 lg:col-span-5 flex justify-center w-full">
-            <ScrollReveal variant="slide-right" className="w-full flex justify-center">
-              <div className="relative overflow-hidden rounded-2xl border border-[#dee6ed] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md w-full max-w-md lg:max-w-none">
+            <ScrollReveal variant="slide-up" className="w-full flex justify-center">
+              <div className="relative overflow-hidden rounded-2xl border border-[#dee6ed] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md w-full max-w-md mx-auto lg:mx-0 lg:max-w-none">
                 
                 {/* Profile Image Wrap */}
                 <div className="relative w-full h-[360px] sm:h-[400px] lg:h-[340px] xl:h-[380px] overflow-hidden rounded-xl bg-slate-100 border border-[#dee6ed]/40">
@@ -166,7 +166,7 @@ export function ValuePropositionSection() {
           <div className="col-span-12 lg:col-span-7 flex flex-col justify-start w-full max-w-md mx-auto lg:max-w-none lg:mx-0">
             
             {/* Section Header */}
-            <ScrollReveal variant="slide-left" delay={50}>
+            <ScrollReveal variant="slide-up" delay={50}>
               <article className="mb-6 text-center lg:text-left flex flex-col items-center lg:items-start">
                 <span className="inline-flex px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-[#1a4066]/10 text-[#132339] mb-4 mx-auto lg:mx-0">
                   Valor Añadido
@@ -182,7 +182,7 @@ export function ValuePropositionSection() {
             </ScrollReveal>
 
             {/* Accent Callout Block with a smooth text rotation and min-height to prevent layout shifts */}
-            <ScrollReveal variant="slide-left" delay={150}>
+            <ScrollReveal variant="slide-up" delay={150}>
               <div className="relative overflow-hidden rounded-2xl border-l-4 border-[#c2410c] bg-[#c2410c]/5 p-6 sm:p-8 border-y border-r border-[#dee6ed]/60 transition-all duration-300 hover:shadow-sm mb-6 min-h-[110px] sm:min-h-[96px] flex items-center justify-center text-center lg:text-left lg:justify-start">
                 <div className="absolute top-0 right-0 h-32 w-32 bg-[radial-gradient(circle_at_100%_0%,rgba(194,65,12,0.06),transparent_70%)] pointer-events-none" />
                 <p
