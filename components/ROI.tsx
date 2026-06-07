@@ -157,13 +157,22 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                 <span className="text-xs font-medium text-slate-400/80 tracking-wide">Estimación gratuita e instantánea</span>
               </div>
 
-              {/* Return hint */}
-              <Link href="/" className="group animate-fade-in-up-delay-3 mt-16 flex flex-col items-center gap-2 text-xs text-slate-400 hover:text-[#c2410c] transition-colors duration-300">
-                <span>Volver al inicio</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1">
-                  <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
-                </svg>
-              </Link>
+              {/* Scroll / Return hint depending on context */}
+              {hideCasesTable ? (
+                <div className="animate-fade-in-up-delay-3 mt-16 flex flex-col items-center gap-2 text-xs text-slate-400">
+                  <span>o sigue navegando</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 animate-bounce">
+                    <path fillRule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              ) : (
+                <Link href="/" className="group animate-fade-in-up-delay-3 mt-16 flex flex-col items-center gap-2 text-xs text-slate-400 hover:text-[#c2410c] transition-colors duration-300">
+                  <span>Volver al inicio</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1">
+                    <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+              )}
             </div>
           </div>
         </ScrollReveal>
@@ -312,6 +321,26 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                       ROI = ((Ahorro Anual - Inversión) / Inversión) x 100
                     </code>
                   </div>
+
+                  {hideCasesTable && (
+                    <div className="mt-6 flex justify-end">
+                      <Link
+                        href="/roi"
+                        className="group inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-slate-300 transition-all duration-150 hover:border-[#c2410c]/40 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
+                      >
+                        Ver casos de éxito
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                          aria-hidden="true"
+                        >
+                          <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+                    </div>
+                  )}
                 </article>
               </ScrollReveal>
             </div>

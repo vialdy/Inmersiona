@@ -73,12 +73,16 @@ export function ContactForm() {
                   desc: "Te planteamos una hoja de ruta técnica inicial sin ningún compromiso de permanencia."
                 },
                 {
-                  title: "Confidencialidad total (RGPD)",
+                  title: "Confidencialidad total",
                   desc: "Tus bases de datos, flujos de ETL, integraciones y telefonía están 100% seguros."
                 },
                 {
                   title: "Foco en tu equipo in-house",
                   desc: "Diseñamos soluciones realistas priorizando la ejecución de tus propios desarrolladores internos."
+                },
+                {
+                  title: "Procesos antes que IA",
+                  desc: "Saneamos y optimizamos tu operativa real paso a paso antes de aplicar automatización algorítmica."
                 }
               ].map((item, idx) => (
                 <li key={idx} className="flex gap-3">

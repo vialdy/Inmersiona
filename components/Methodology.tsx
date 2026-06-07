@@ -312,7 +312,7 @@ export function Methodology() {
             </div>
 
             {/* ─── PROGRESS BAR ─── */}
-            <div className="mb-10 overflow-x-auto overflow-y-hidden py-4 -my-4 no-scrollbar">
+            <div className="mb-10 overflow-x-auto py-8 -my-8 no-scrollbar">
               <div
                 role="tablist"
                 aria-label="Fases del proceso"
@@ -340,6 +340,8 @@ export function Methodology() {
                         className={`relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full text-xs font-extrabold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 cursor-pointer ${
                           isActive
                             ? "bg-[#c2410c] text-white shadow-lg shadow-[#c2410c]/30 scale-110"
+                            : isCompleted && !isCTA
+                            ? "bg-transparent text-[#c2410c] hover:scale-125"
                             : isCompleted
                             ? "bg-[#c2410c]/15 text-[#c2410c] hover:bg-[#c2410c]/25"
                             : "bg-[#dee6ed] text-[#667b99] hover:bg-[#d0d8e2]"
@@ -347,8 +349,8 @@ export function Methodology() {
                       >
                         {isCTA ? (
                           isCompleted || isActive ? (
-                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M 12 12 L 20.66 7 A 10 10 0 1 0 20.66 17 Z" />
+                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                             </svg>
                           ) : (
                             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -356,8 +358,8 @@ export function Methodology() {
                             </svg>
                           )
                         ) : isCompleted ? (
-                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M 12 12 L 20.66 7 A 10 10 0 1 0 20.66 17 Z" />
+                          <svg className="h-8 w-8" viewBox="0 0 13 13" fill="currentColor" style={{ shapeRendering: "crispEdges" }}>
+                            <path d="M4 0 h6 v1 h2 v1 h1 v2 h-4 v1 h-2 v1 h-2 v1 h2 v1 h2 v1 h4 v2 h-1 v1 h-2 v1 h-6 v-1 h-2 v-1 h-1 v-1 h-1 v-7 h1 v-1 h1 v-1 h2 v-1 Z" />
                           </svg>
                         ) : (
                           phases[idx]?.num
