@@ -1,0 +1,42 @@
+{
+  "profile": "strict-nextjs-review",
+  "framework": "nextjs-app-router",
+  "language": "typescript",
+  "styling": {
+    "reactComponents": "tailwind-css-only",
+    "forbid": [
+      "inline-style-prop",
+      "css-modules-for-components",
+      "styled-components",
+      "emotion",
+      "component-scoped-css-files"
+    ]
+  },
+  "semanticHtml": {
+    "requiredLandmarks": ["header", "main", "section", "article", "footer"],
+    "requireSingleMain": true,
+    "requireHeadingHierarchy": true,
+    "preferNativeElementsOverAriaRoles": true
+  },
+  "accessibility": {
+    "level": "absolute",
+    "requireAriaLabelsForNavigation": true,
+    "requireAriaLabelsForForms": true,
+    "requireVisibleLabelsForInputs": true,
+    "requireAltTextForImages": true,
+    "requireKeyboardReachableControls": true,
+    "requireFocusVisibleStates": true
+  },
+  "responsive": {
+    "strategy": "mobile-first",
+    "breakpointDirection": "min-width",
+    "requireResponsiveLayoutForAllSections": true,
+    "requireReadableTouchTargets": true
+  },
+  "qualityGates": {
+    "lint": "npm run lint",
+    "typecheck": "npm run typecheck",
+    "format": "npm run format:check",
+    "build": "npm run build"
+  }
+}

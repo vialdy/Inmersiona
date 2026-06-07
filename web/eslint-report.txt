@@ -1,0 +1,220 @@
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\app\mapa-operativo\page.tsx
+  3:27  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+  3:38  warning  'useRef' is defined but never used     @typescript-eslint/no-unused-vars
+  4:8   warning  'Image' is defined but never used      @typescript-eslint/no-unused-vars
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\app\page.tsx
+  1:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\app\roi\page.tsx
+  1:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\DetailedNetworkMap.tsx
+  108:13  error  Use Tailwind CSS utility classes for React component styling  react/forbid-dom-props
+  145:17  error  Use Tailwind CSS utility classes for React component styling  react/forbid-dom-props
+  211:21  error  Use Tailwind CSS utility classes for React component styling  react/forbid-dom-props
+  233:19  error  Use Tailwind CSS utility classes for React component styling  react/forbid-dom-props
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\FloatingContactWidget.tsx
+  177:11  error  Use Tailwind CSS utility classes for React component styling  react/forbid-dom-props
+  258:19  error  the autocomplete attribute is incorrectly formatted           jsx-a11y/autocomplete-valid
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx
+   18:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:18:7
+  16 |     const seen = sessionStorage.getItem(SESSION_KEY);
+  17 |     if (seen === "1") {
+> 18 |       setVideoFinished(true);
+     |       ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  19 |       setShowVideo(false);
+  20 |     } else {
+  21 |       setShowVideo(true);                                                                                                                     react-hooks/set-state-in-effect
+   80:15  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:80:15
+  78 |               ? "-translate-x-[120px] opacity-0 pointer-events-none"
+  79 |               : "translate-x-0 opacity-100 pointer-events-auto"
+> 80 |           } ${!showVideo && !playedVideo.current ? "animate-fade-in-up" : ""}`}
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  81 |         >
+  82 |           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#c2410c]/30 bg-[#c2410c]/10 text-xs font-semibold tracking-wider text-[#f8fafc] uppercase mb-6">
+  83 |             <span className="h-2 w-2 rounded-full bg-[#c2410c] animate-pulse" />                                                                                                                               react-hooks/refs
+   80:29  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:80:29
+  78 |               ? "-translate-x-[120px] opacity-0 pointer-events-none"
+  79 |               : "translate-x-0 opacity-100 pointer-events-auto"
+> 80 |           } ${!showVideo && !playedVideo.current ? "animate-fade-in-up" : ""}`}
+     |                             ^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  81 |         >
+  82 |           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#c2410c]/30 bg-[#c2410c]/10 text-xs font-semibold tracking-wider text-[#f8fafc] uppercase mb-6">
+  83 |             <span className="h-2 w-2 rounded-full bg-[#c2410c] animate-pulse" />                                                                                                                               react-hooks/refs
+   80:30  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:80:30
+  78 |               ? "-translate-x-[120px] opacity-0 pointer-events-none"
+  79 |               : "translate-x-0 opacity-100 pointer-events-auto"
+> 80 |           } ${!showVideo && !playedVideo.current ? "animate-fade-in-up" : ""}`}
+     |                              ^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  81 |         >
+  82 |           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#c2410c]/30 bg-[#c2410c]/10 text-xs font-semibold tracking-wider text-[#f8fafc] uppercase mb-6">
+  83 |             <span className="h-2 w-2 rounded-full bg-[#c2410c] animate-pulse" />
+
+To initialize a ref only once, check that the ref is null with the pattern `if (ref.current == null) { ref.current = ... }`  react-hooks/refs
+  124:15  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:124:15
+  122 |               ? "translate-x-[120px] opacity-0 pointer-events-none"
+  123 |               : "translate-x-0 opacity-100 pointer-events-auto"
+> 124 |           } ${!showVideo && !playedVideo.current ? "animate-fade-in-up-delay-2" : ""}`}
+      |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  125 |         >
+  126 |           <InteractiveNetworkMap />
+  127 |         </div>                                                                                                                                                                                                                                                                                                                                                  react-hooks/refs
+  124:29  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:124:29
+  122 |               ? "translate-x-[120px] opacity-0 pointer-events-none"
+  123 |               : "translate-x-0 opacity-100 pointer-events-auto"
+> 124 |           } ${!showVideo && !playedVideo.current ? "animate-fade-in-up-delay-2" : ""}`}
+      |                             ^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  125 |         >
+  126 |           <InteractiveNetworkMap />
+  127 |         </div>                                                                                                                                                                                                                                                                                                                                                  react-hooks/refs
+  124:30  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Hero.tsx:124:30
+  122 |               ? "translate-x-[120px] opacity-0 pointer-events-none"
+  123 |               : "translate-x-0 opacity-100 pointer-events-auto"
+> 124 |           } ${!showVideo && !playedVideo.current ? "animate-fade-in-up-delay-2" : ""}`}
+      |                              ^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  125 |         >
+  126 |           <InteractiveNetworkMap />
+  127 |         </div>
+
+To initialize a ref only once, check that the ref is null with the pattern `if (ref.current == null) { ref.current = ... }`                                                                                                                                                                                                                     react-hooks/refs
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\InteractiveNetworkMap.tsx
+   84:5   error  Non-interactive elements should not be assigned mouse or keyboard event listeners  jsx-a11y/no-noninteractive-element-interactions
+  141:13  error  Use Tailwind CSS utility classes for React component styling                       react/forbid-dom-props
+  178:17  error  Use Tailwind CSS utility classes for React component styling                       react/forbid-dom-props
+  244:21  error  Use Tailwind CSS utility classes for React component styling                       react/forbid-dom-props
+  266:19  error  Use Tailwind CSS utility classes for React component styling                       react/forbid-dom-props
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\MatrixCursorBackground.tsx
+   75:9   error    'mouse' is never reassigned. Use 'const' instead              prefer-const
+  127:16  warning  '_' is defined but never used                                 @typescript-eslint/no-unused-vars
+  203:16  warning  '_' is defined but never used                                 @typescript-eslint/no-unused-vars
+  369:7   error    Use Tailwind CSS utility classes for React component styling  react/forbid-dom-props
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Methodology.tsx
+  316:15  error  Elements with the 'tablist' interactive role must be focusable  jsx-a11y/interactive-supports-focus
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Navbar.tsx
+    3:31  warning  'useRef' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   19:10  warning  'isScrolled' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   42:9   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\Navbar.tsx:42:9
+  40 |     if (pathname !== "/") {
+  41 |       if (pathname === "/mapa-operativo") {
+> 42 |         setActiveWidth("max-w-7xl");
+     |         ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  43 |       } else {
+  44 |         setActiveWidth("max-w-6xl");
+  45 |       }  react-hooks/set-state-in-effect
+  294:19  error    Use Tailwind CSS utility classes for React component styling                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react/forbid-dom-props
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\ScrollReveal.tsx
+   28:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\ScrollReveal.tsx:28:7
+  26 |     // Basic check for SSR safety
+  27 |     if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+> 28 |       setIsVisible(true);
+     |       ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  29 |       return;
+  30 |     }
+  31 |  react-hooks/set-state-in-effect
+  103:9  error  Use Tailwind CSS utility classes for React component styling                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react/forbid-dom-props
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\SmoothScroll.tsx
+  29:16  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  34:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\SplashGate.tsx
+  15:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\SplashGate.tsx:15:7
+  13 |     const seen = sessionStorage.getItem(SESSION_KEY);
+  14 |     if (seen) {
+> 15 |       setShowSplash(false);
+     |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  16 |     } else {
+  17 |       setShowSplash(true);
+  18 |     }  react-hooks/set-state-in-effect
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\ValuePropositionSection.tsx
+   15:10   warning  'mounted' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   20:5    error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\udfp3a\OneDrive - Grupo Planeta\Documentos\Inmersiona\web\components\ValuePropositionSection.tsx:20:5
+  18 |
+  19 |   useEffect(() => {
+> 20 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  21 |
+  22 |     // Rotate callout phrases every 5.5 seconds (5000ms pause + 500ms transition time)
+  23 |     const interval = setInterval(() => {  react-hooks/set-state-in-effect
+  144:23   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react/no-unescaped-entities
+  144:250  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react/no-unescaped-entities
+  196:19   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react/no-unescaped-entities
+  196:51   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react/no-unescaped-entities
+
+✖ 43 problems (33 errors, 10 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

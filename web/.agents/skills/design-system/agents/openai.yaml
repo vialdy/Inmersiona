@@ -1,0 +1,7 @@
+interface:
+  display_name: "Inmersiona Design System"
+  short_description: "UI tokens and accessibility rules"
+  default_prompt: "Use $design-system to design or update an Inmersiona UI component."
+
+policy:
+  allow_implicit_invocation: true
