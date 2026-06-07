@@ -68,7 +68,7 @@ export function DetailedNetworkMap({
   const currentIdx = hoveredStep !== null ? hoveredStep : activeStep;
 
   return (
-    <div className="relative w-full h-auto min-h-[300px] md:h-[570px] lg:h-[570px] flex flex-col justify-between items-center rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] p-6 backdrop-blur-sm shadow-xl shadow-black/25">
+    <div id="operational-map" className="relative w-full h-auto min-h-[300px] md:h-[570px] lg:h-[570px] flex flex-col justify-between items-center rounded-2xl border border-[#c2410c]/25 bg-white/[0.03] p-6 backdrop-blur-sm shadow-xl shadow-black/25">
       {/* Dynamic inline styles for active hito pulsing */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes pulseActiveLarge {
