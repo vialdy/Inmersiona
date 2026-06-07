@@ -173,7 +173,7 @@ export function ROI() {
           
           <div className="relative z-20 mx-auto w-full max-w-6xl">
             <ScrollReveal variant="slide-up">
-              <div className="animate-fade-in-up flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="animate-fade-in-up flex flex-col gap-8 mb-12 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
                 <article className="max-w-3xl">
                   <p className="text-sm font-bold uppercase tracking-wider text-[#c2410c]">
                     ROI (Retorno de Inversión)
@@ -184,7 +184,7 @@ export function ROI() {
                   <p className="mt-4 text-base leading-7 text-[#667b99]">
                     Diseñamos intervenciones con impacto financiero directo. Utiliza la calculadora interactiva inferior para estimar el potencial de optimización en tu organización basándote en datos reales.
                   </p>
-                  <div className="mt-6 mb-12 h-1 w-12 rounded bg-[#c2410c]" />
+                  <div className="mt-6 h-1 w-12 rounded bg-[#c2410c]" />
                 </article>
 
                 <button

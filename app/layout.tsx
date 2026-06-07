@@ -5,6 +5,8 @@ import { FloatingContactWidget } from "@/components/FloatingContactWidget";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Footer } from "@/components/Footer";
 import { MatrixCursorBackground } from "@/components/MatrixCursorBackground";
+import { Analytics } from "@vercel/analytics/react";
+
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -41,6 +43,7 @@ export default function RootLayout({
         <Footer />
         <FloatingContactWidget />
         <MatrixCursorBackground />
+        <Analytics />
       </body>
     </html>
   );
