@@ -314,7 +314,7 @@ export function Methodology() {
               <div
                 role="tablist"
                 aria-label="Fases del proceso"
-                className="flex items-center px-4 min-w-max"
+                className="flex items-center px-8 min-w-max"
                 onKeyDown={handleKeyDown}
                 tabIndex={0}
               >
