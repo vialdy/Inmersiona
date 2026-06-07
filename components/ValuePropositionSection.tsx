@@ -163,7 +163,7 @@ export function ValuePropositionSection() {
           </div>
 
           {/* Right Column: Title, Callout and Benefits List with Balanced Spacing */}
-          <div className="col-span-12 lg:col-span-7 flex flex-col justify-start">
+          <div className="col-span-12 lg:col-span-7 flex flex-col justify-start w-full max-w-md mx-auto lg:max-w-none lg:mx-0">
             
             {/* Section Header */}
             <ScrollReveal variant="slide-left" delay={50}>
