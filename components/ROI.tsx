@@ -34,11 +34,13 @@ const roiRows = [
 
 interface ROIProps {
   hideCasesTable?: boolean;
+  showCalculatorDirectly?: boolean;
+  hideHeader?: boolean;
 }
 
-export function ROI({ hideCasesTable = false }: ROIProps) {
+export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hideHeader = false }: ROIProps) {
   // Navigation states between video phase (Phase 1) and calculator phase (Phase 2)
-  const [showCalculator, setShowCalculator] = useState(false);
+  const [showCalculator, setShowCalculator] = useState(showCalculatorDirectly);
   const [animKey, setAnimKey] = useState(0);
 
   // Calculator state
@@ -240,45 +242,47 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(194,65,12,0.06),transparent_40%)]" />
           
           <div className="relative z-20 mx-auto w-full max-w-6xl">
-            <ScrollReveal variant="slide-up">
-              <div className="animate-fade-in-up flex flex-col gap-8 mb-12 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
-                <article className="max-w-3xl">
-                  <p className="text-sm font-bold uppercase tracking-wider text-[#c2410c]">
-                    ROI (Retorno de Inversión)
-                  </p>
-                  <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
-                    El retorno de la consultoría se mide en ahorros tangibles y tiempo recuperado.
-                  </h2>
-                  <p className="mt-4 text-base leading-7 text-slate-300">
-                    Diseñamos intervenciones con impacto financiero directo. Utiliza la calculadora interactiva inferior para estimar el potencial de optimización en tu organización basándote en datos reales.
-                  </p>
-                  <div className="mt-6 h-1 w-12 rounded bg-[#c2410c]" />
-                </article>
+            {!hideHeader && (
+              <ScrollReveal variant="slide-up">
+                <div className="animate-fade-in-up flex flex-col gap-8 mb-12 sm:mb-16 sm:flex-row sm:items-start sm:justify-between">
+                  <article className="max-w-3xl">
+                    <p className="text-sm font-bold uppercase tracking-wider text-[#c2410c]">
+                      ROI (Retorno de Inversión)
+                    </p>
+                    <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+                      El retorno de la consultoría se mide en ahorros tangibles y tiempo recuperado.
+                    </h2>
+                    <p className="mt-4 text-base leading-7 text-slate-300">
+                      Diseñamos intervenciones con impacto financiero directo. Utiliza la calculadora interactiva inferior para estimar el potencial de optimización en tu organización basándote en datos reales.
+                    </p>
+                    <div className="mt-6 h-1 w-12 rounded bg-[#c2410c]" />
+                  </article>
 
-                <button
-                  type="button"
-                  onClick={handleShowVideo}
-                  className="inline-flex shrink-0 items-center gap-2 self-start rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-slate-300 transition-all duration-150 hover:border-[#c2410c]/40 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
-                  aria-label="Volver a ver el vídeo introductorio"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="h-4 w-4"
-                    aria-hidden="true"
+                  <button
+                    type="button"
+                    onClick={handleShowVideo}
+                    className="inline-flex shrink-0 items-center gap-2 self-start rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-slate-300 transition-all duration-150 hover:border-[#c2410c]/40 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
+                    aria-label="Volver a ver el vídeo introductorio"
                   >
-                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                  </svg>
-                  Volver al vídeo
-                </button>
-              </div>
-            </ScrollReveal>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                    </svg>
+                    Volver al vídeo
+                  </button>
+                </div>
+              </ScrollReveal>
+            )}
 
             {/* Dynamic ROI Calculator Widget */}
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] mb-16">
-              <ScrollReveal variant="slide-right" delay={100}>
-                <article className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm p-6 sm:p-8 h-full flex flex-col justify-between">
+            <div className="grid gap-8 lg:grid-cols-2 mb-12 items-stretch">
+              <ScrollReveal variant="slide-right" delay={100} className="h-full">
+                <article className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm p-8 sm:p-10 h-full flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
                       <h3 className="text-lg font-bold text-white">Calculadora de Optimización</h3>
@@ -486,8 +490,8 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
               </ScrollReveal>
 
               {/* Calculator Results Dashboard */}
-              <ScrollReveal variant="slide-left" delay={200}>
-                <article className="rounded-2xl border border-white/15 bg-[#0b1421] p-8 sm:p-10 flex flex-col justify-between shadow-xl shadow-black/25 h-full relative overflow-hidden">
+              <ScrollReveal variant="slide-left" delay={200} className="h-full">
+                <article className="rounded-2xl border border-white/10 bg-[#0b1421] p-8 sm:p-10 h-full flex flex-col justify-between shadow-xl shadow-black/25 relative overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(194,65,12,0.03),transparent_50%)] pointer-events-none" />
                   
                   <div>
@@ -528,38 +532,47 @@ export function ROI({ hideCasesTable = false }: ROIProps) {
                     </div>
                   </div>
 
-                  <div className="mt-10 sm:mt-12">
-                    <div className="rounded-2xl bg-white/[0.02] border border-white/10 p-5 sm:p-6 text-xs sm:text-sm text-slate-200 leading-relaxed shadow-sm">
-                      <strong className="text-white block mb-1.5 font-bold">Cálculo de eficiencia conservador:</strong> 
-                      Asume recuperar el 80% del tiempo de ineficiencia reportado en base a auditorías previas de optimización de procesos.
-                      <code className="block mt-3 font-mono text-[10px] sm:text-xs text-orange-400/90 bg-black/30 p-2 rounded-lg border border-white/5">
-                        ROI Neto = ((Ahorro Anual - Inversión) / Inversión) x 100
-                      </code>
-                    </div>
-
-                    {hideCasesTable && (
-                      <div className="mt-6 flex justify-end">
-                        <Link
-                          href="/roi"
-                          className="group inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-slate-300 transition-all duration-150 hover:border-[#c2410c]/40 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
+                  {/* Ver Casos de Éxito action button placed at bottom */}
+                  {hideCasesTable && (
+                    <div className="mt-8 flex justify-end">
+                      <Link
+                        href="/roi"
+                        className="group inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-slate-300 transition-all duration-150 hover:border-[#c2410c]/40 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
+                      >
+                        Ver casos de éxito
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                          aria-hidden="true"
                         >
-                          Ver casos de éxito
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                            aria-hidden="true"
-                          >
-                            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                          </svg>
-                        </Link>
-                      </div>
-                    )}
-                  </div>
+                          <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                        </svg>
+                      </Link>
+                    </div>
+                  )}
                 </article>
               </ScrollReveal>
             </div>
+
+            {/* Extracted Disclaimer / Calculation Info centered below the calculator grid */}
+            <ScrollReveal variant="slide-up" delay={250} className="w-full max-w-2xl mx-auto mb-16">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm p-6 sm:p-8 text-center shadow-lg">
+                <strong className="text-white block mb-2 text-sm sm:text-base font-extrabold uppercase tracking-wider">
+                  Cálculo de Eficiencia Conservador
+                </strong>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  Asume recuperar el 80% del tiempo de ineficiencia reportado en base a auditorías previas de optimización de procesos.
+                </p>
+                <div className="mt-5 inline-block">
+                  <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold block mb-1.5">Fórmula financiera aplicada</span>
+                  <code className="inline-block font-mono text-xs sm:text-sm text-orange-400/90 bg-black/40 px-4 py-2.5 rounded-xl border border-white/5">
+                    ROI Neto = ((Ahorro Anual - Inversión) / Inversión) x 100
+                  </code>
+                </div>
+              </div>
+            </ScrollReveal>
 
             {/* Minimalist ROI Table Comparative */}
             {!hideCasesTable && (

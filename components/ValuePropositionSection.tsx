@@ -11,7 +11,11 @@ const callouts = [
   "Menos informes teóricos, más soluciones sobre el terreno y retorno de inversión medible."
 ];
 
-export function ValuePropositionSection() {
+interface ValuePropositionSectionProps {
+  hideHeader?: boolean;
+}
+
+export function ValuePropositionSection({ hideHeader = false }: ValuePropositionSectionProps) {
   const [currentCalloutIndex, setCurrentCalloutIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -163,20 +167,22 @@ export function ValuePropositionSection() {
           <div className="flex flex-col justify-start w-full max-w-xl mx-auto">
             
             {/* Section Header */}
-            <ScrollReveal variant="slide-up" delay={50} className="w-full">
-              <article className="mb-6 text-center lg:text-left flex flex-col items-center lg:items-start">
-                <span className="inline-flex px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-[#1a4066]/10 text-[#132339] mb-4 mx-auto lg:mx-0">
-                  Valor Añadido
-                </span>
-                <h2
-                  id="value-title"
-                  className="text-3xl font-extrabold sm:text-4xl tracking-tight leading-tight text-[#132339]"
-                >
-                  Garantías reales: Impacto directo medido en el puesto de trabajo
-                </h2>
-                <div className="mt-4 h-1 w-12 bg-[#c2410c] rounded mx-auto lg:mx-0" />
-              </article>
-            </ScrollReveal>
+            {!hideHeader && (
+              <ScrollReveal variant="slide-up" delay={50} className="w-full">
+                <article className="mb-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+                  <span className="inline-flex px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-[#1a4066]/10 text-[#132339] mb-4 mx-auto lg:mx-0">
+                    Valor Añadido
+                  </span>
+                  <h2
+                    id="value-title"
+                    className="text-3xl font-extrabold sm:text-4xl tracking-tight leading-tight text-[#132339]"
+                  >
+                    Garantías reales: Impacto directo medido en el puesto de trabajo
+                  </h2>
+                  <div className="mt-4 h-1 w-12 bg-[#c2410c] rounded mx-auto lg:mx-0" />
+                </article>
+              </ScrollReveal>
+            )}
 
             {/* Accent Callout Block with a smooth text rotation and min-height to prevent layout shifts */}
             <ScrollReveal variant="slide-up" delay={150} className="w-full">

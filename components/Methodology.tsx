@@ -117,7 +117,11 @@ type Direction = "forward" | "backward";
    COMPONENT
    ─────────────────────────────────────────────────────── */
 
-export function Methodology() {
+interface MethodologyProps {
+  hideHeader?: boolean;
+}
+
+export function Methodology({ hideHeader = false }: MethodologyProps) {
   const [selectedTrack, setSelectedTrack] = useState<Track | null>(null);
   const [currentPhase, setCurrentPhase] = useState(0);
   const [direction, setDirection] = useState<Direction>("forward");
@@ -194,24 +198,26 @@ export function Methodology() {
     >
       <div className="mx-auto w-full max-w-6xl">
         {/* Section Header */}
-        <ScrollReveal variant="slide-up">
-          <article className="max-w-3xl">
-            <p className="text-sm font-bold tracking-wider text-[#c2410c] uppercase">
-              Metodología
-            </p>
-            <h2
-              id="methodology-title"
-              className="mt-4 text-3xl font-extrabold sm:text-4xl tracking-tight leading-tight"
-            >
-              Elige tu proceso de inmersión operativa.
-            </h2>
-            <p className="mt-3 text-base text-[#667b99] leading-relaxed max-w-2xl">
-              Dos metodologías contrastadas para descubrir y resolver ineficiencias.
-              Avanza paso a paso y descubre cuál encaja mejor con tu operación.
-            </p>
-            <div className="mt-6 h-1 w-12 bg-[#c2410c] rounded mb-10" />
-          </article>
-        </ScrollReveal>
+        {!hideHeader && (
+          <ScrollReveal variant="slide-up">
+            <article className="max-w-3xl">
+              <p className="text-sm font-bold tracking-wider text-[#c2410c] uppercase">
+                Metodología
+              </p>
+              <h2
+                id="methodology-title"
+                className="mt-4 text-3xl font-extrabold sm:text-4xl tracking-tight leading-tight"
+              >
+                Elige tu proceso de inmersión operativa.
+              </h2>
+              <p className="mt-3 text-base text-[#667b99] leading-relaxed max-w-2xl">
+                Dos metodologías contrastadas para descubrir y resolver ineficiencias.
+                Avanza paso a paso y descubre cuál encaja mejor con tu operación.
+              </p>
+              <div className="mt-6 h-1 w-12 bg-[#c2410c] rounded mb-10" />
+            </article>
+          </ScrollReveal>
+        )}
 
         {/* ─── TRACK SELECTOR ─── */}
         {selectedTrack === null && (
