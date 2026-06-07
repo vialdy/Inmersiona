@@ -40,13 +40,30 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // Reset scroll on route change
+  // Reset scroll or go to hash on route change
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const lenis = (window as any).lenis;
-    if (lenis) {
+    if (!lenis) return;
+
+    // Small timeout to allow Next.js to render the new page's DOM
+    const timer = setTimeout(() => {
+      if (window.location.hash) {
+        try {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            lenis.scrollTo(target, { immediate: true });
+            return;
+          }
+        } catch (e) {
+          // Ignore invalid selector errors
+        }
+      }
+      // If no hash or element not found, scroll to top
       lenis.scrollTo(0, { immediate: true });
-    }
+    }, 50);
+
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   return <>{children}</>;
