@@ -76,7 +76,7 @@ export function ROI() {
         <ScrollReveal variant="fade">
           <div
             key={`video-${animKey}`}
-            className="relative flex min-h-screen items-center justify-center animate-fade-in-scale"
+            className="relative flex w-full min-h-screen items-center justify-center animate-fade-in-scale"
           >
             {/* Background Video */}
             <video
@@ -85,7 +85,7 @@ export function ROI() {
               loop
               playsInline
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             >
               <source src="/silueta.mp4" type="video/mp4" />
             </video>

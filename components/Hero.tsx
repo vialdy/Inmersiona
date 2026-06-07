@@ -137,7 +137,7 @@ export function Hero() {
               : "clip-path-open opacity-100 pointer-events-auto"
           }`}
         >
-          <div className="w-full max-w-7xl aspect-[16/10] md:aspect-video rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm shadow-2xl shadow-black/35 overflow-hidden relative flex flex-col">
+          <div className="w-full max-w-7xl aspect-[9/16] md:aspect-video rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm shadow-2xl shadow-black/35 overflow-hidden relative flex flex-col">
             {/* Video */}
             <div className="relative flex-1 min-h-0 w-full h-full">
               <video

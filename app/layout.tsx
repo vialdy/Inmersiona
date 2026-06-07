@@ -31,10 +31,10 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${manrope.variable} h-full antialiased`}
+      className={`${manrope.variable} h-full antialiased overflow-x-hidden`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-[#f8fafc] text-[#132339] font-sans" suppressHydrationWarning>
+      <body className="flex min-h-full flex-col bg-[#f8fafc] text-[#132339] font-sans overflow-x-hidden" suppressHydrationWarning>
         <SmoothScroll>
           {children}
         </SmoothScroll>
