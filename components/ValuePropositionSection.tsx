@@ -96,13 +96,13 @@ export function ValuePropositionSection() {
       `}</style>
 
       <div className="relative z-20 mx-auto w-full max-w-6xl">
-        {/* Balanced lg:items-center layout to ensure perfect vertical alignment on desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center items-start">
+        {/* Symmetrical 2-column layout to ensure perfect centering and balance on desktop and mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center items-start w-full">
           
-          {/* Left Column: Consultant Profile Card (Clean, static, perfectly proportioned) */}
-          <div className="col-span-12 lg:col-span-5 flex justify-center w-full">
+          {/* Left Column: Consultant Profile Card (Clean, static, perfectly proportioned and centered) */}
+          <div className="w-full flex justify-center">
             <ScrollReveal variant="slide-up" className="w-full flex justify-center">
-              <div className="relative overflow-hidden rounded-2xl border border-[#dee6ed] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md w-full max-w-md mx-auto lg:mx-0 lg:max-w-none">
+              <div className="relative overflow-hidden rounded-2xl border border-[#dee6ed] bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md w-full max-w-md mx-auto">
                 
                 {/* Profile Image Wrap */}
                 <div className="relative w-full h-[360px] sm:h-[400px] lg:h-[340px] xl:h-[380px] overflow-hidden rounded-xl bg-slate-100 border border-[#dee6ed]/40">
@@ -162,11 +162,11 @@ export function ValuePropositionSection() {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Title, Callout and Benefits List with Balanced Spacing */}
-          <div className="col-span-12 lg:col-span-7 flex flex-col justify-start w-full max-w-md mx-auto lg:max-w-none lg:mx-0">
+          {/* Right Column: Title, Callout and Benefits List with Symmetrical Centering */}
+          <div className="flex flex-col justify-start w-full max-w-xl mx-auto">
             
             {/* Section Header */}
-            <ScrollReveal variant="slide-up" delay={50}>
+            <ScrollReveal variant="slide-up" delay={50} className="w-full">
               <article className="mb-6 text-center lg:text-left flex flex-col items-center lg:items-start">
                 <span className="inline-flex px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-[#1a4066]/10 text-[#132339] mb-4 mx-auto lg:mx-0">
                   Valor Añadido
@@ -182,7 +182,7 @@ export function ValuePropositionSection() {
             </ScrollReveal>
 
             {/* Accent Callout Block with a smooth text rotation and min-height to prevent layout shifts */}
-            <ScrollReveal variant="slide-up" delay={150}>
+            <ScrollReveal variant="slide-up" delay={150} className="w-full">
               <div className="relative overflow-hidden rounded-2xl border-l-4 border-[#c2410c] bg-[#c2410c]/5 p-6 sm:p-8 border-y border-r border-[#dee6ed]/60 transition-all duration-300 hover:shadow-sm mb-6 min-h-[110px] sm:min-h-[96px] flex items-center justify-center text-center lg:text-left lg:justify-start">
                 <div className="absolute top-0 right-0 h-32 w-32 bg-[radial-gradient(circle_at_100%_0%,rgba(194,65,12,0.06),transparent_70%)] pointer-events-none" />
                 <p
@@ -196,10 +196,10 @@ export function ValuePropositionSection() {
             </ScrollReveal>
 
             {/* Vertical Stack of Benefits with Beautiful Contrast and Guaranteed Staggered Animation */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 w-full">
               
               {/* Card 1: Diagnóstico Rápido */}
-              <ScrollReveal variant="slide-up" delay={100}>
+              <ScrollReveal variant="slide-up" delay={100} className="w-full">
                 <article
                   className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
                 >
@@ -235,7 +235,7 @@ export function ValuePropositionSection() {
               </ScrollReveal>
 
               {/* Card 2: Revisado con Usuarios */}
-              <ScrollReveal variant="slide-up" delay={200}>
+              <ScrollReveal variant="slide-up" delay={200} className="w-full">
                 <article
                   className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
                 >
@@ -280,7 +280,7 @@ export function ValuePropositionSection() {
               </ScrollReveal>
 
               {/* Card 3: Soluciones Aterrizadas */}
-              <ScrollReveal variant="slide-up" delay={300}>
+              <ScrollReveal variant="slide-up" delay={300} className="w-full">
                 <article
                   className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 rounded-2xl border border-[#dee6ed] bg-[#f8fafc] p-6 shadow-sm transition-all duration-300 hover:bg-white hover:border-[#c2410c]/30 hover:scale-[1.01] hover:shadow-md"
                 >
