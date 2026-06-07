@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 interface GridCell {
   x: number;
@@ -20,6 +21,7 @@ interface AvoidRect {
 
 export function MatrixCursorBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -366,7 +368,7 @@ export function MatrixCursorBackground() {
       document.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <canvas

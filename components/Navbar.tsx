@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 const navigationItems = [
   { href: "/", label: "Inicio" },
   { href: "/mapa-operativo", label: "Mapa Operativo" },
-  { href: "/#value-proposition", label: "Valor Añadido" },
-  { href: "/#methodology", label: "Metodología" },
+  { href: "/valor-anadido", label: "Valor Añadido" },
+  { href: "/metodologia", label: "Metodología" },
   { href: "/roi", label: "ROI" },
   { href: "/#contact", label: "Contacto" },
 ];
@@ -105,6 +105,14 @@ export function Navbar() {
     // If we're on Mapa Operativo page
     if (pathname === "/mapa-operativo") {
       return item.href === "/mapa-operativo";
+    }
+    // If we're on Valor Añadido page
+    if (pathname === "/valor-anadido") {
+      return item.href === "/valor-anadido";
+    }
+    // If we're on Metodología page
+    if (pathname === "/metodologia") {
+      return item.href === "/metodologia";
     }
     // Homepage anchor links
     if (pathname === "/") {
