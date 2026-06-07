@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
+import Link from "next/link";
 import { ScrollReveal } from "./ScrollReveal";
 
 /* ───────────────────────────────────────────────────────
@@ -492,7 +493,7 @@ export function Methodology() {
                   </p>
 
                   {/* CTA Button */}
-                  <a
+                  <Link
                     href="/#contact"
                     className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#c2410c] text-white text-base font-bold shadow-lg shadow-[#c2410c]/25 hover:bg-[#a1350a] hover:shadow-xl hover:shadow-[#c2410c]/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#132339]"
                   >
@@ -500,7 +501,7 @@ export function Methodology() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                     Solicitar diagnóstico gratuito
-                  </a>
+                  </Link>
 
                   {/* Secondary actions */}
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-6 border-t border-white/10">

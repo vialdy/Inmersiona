@@ -55,7 +55,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
             lenis.scrollTo(target, { immediate: true });
             return;
           }
-        } catch (e) {
+        } catch {
           // Ignore invalid selector errors
         }
       }

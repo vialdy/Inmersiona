@@ -116,16 +116,27 @@ export function Navbar() {
     }
     // Homepage anchor links
     if (pathname === "/") {
-      if (item.href === "/") return activeHash === "" || activeHash === "#" || activeHash === "#hero";
-      if (item.href === "/mapa-operativo") {
+      if (item.href === "/") {
         return activeHash === "" || activeHash === "#" || activeHash === "#hero";
+      }
+      if (item.href === "/mapa-operativo") {
+        return false;
+      }
+      if (item.href === "/valor-anadido") {
+        return activeHash === "#value-proposition";
+      }
+      if (item.href === "/metodologia") {
+        return activeHash === "#methodology";
+      }
+      if (item.href === "/roi") {
+        return activeHash === "#roi";
+      }
+      if (item.href === "/#contact") {
+        return activeHash === "#contact";
       }
       if (item.href.startsWith("/#")) {
         const hash = item.href.substring(1);
         return activeHash === hash;
-      }
-      if (item.href === "/roi") {
-        return activeHash === "#roi";
       }
     }
     return false;
