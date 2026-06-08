@@ -156,7 +156,7 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
             </video>
 
             {/* Dark overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#132339]/90 via-[#132339]/60 to-[#132339]/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1820]/90 via-[#132339]/60 to-[#132339]/40" />
 
             {/* Content overlay */}
             <div className="relative z-20 mx-auto flex w-full max-w-4xl flex-col items-center px-5 text-center sm:px-6 lg:px-8">
