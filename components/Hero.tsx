@@ -52,7 +52,7 @@ export function Hero() {
     return (
       <section
         aria-labelledby="hero-title"
-        className="relative overflow-hidden bg-gradient-to-br from-[#132339] via-[#0f1d30] to-[#0a1421] px-5 py-20 text-white sm:px-6 sm:py-28 lg:px-8 min-h-screen flex items-center justify-center"
+        className="relative overflow-hidden bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339] px-5 py-20 text-white sm:px-6 sm:py-28 lg:px-8 min-h-screen flex items-center justify-center"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(194,65,12,0.08),transparent_45%)]" />
       </section>
@@ -65,7 +65,7 @@ export function Hero() {
     <section
       id="hero"
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-gradient-to-br from-[#132339] via-[#0f1d30] to-[#0a1421] px-5 py-20 text-white sm:px-6 sm:py-28 lg:px-8 min-h-screen flex items-center justify-center"
+      className="relative overflow-hidden bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339] px-5 py-20 text-white sm:px-6 sm:py-28 lg:px-8 min-h-screen flex items-center justify-center"
     >
       {/* Decorative gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(194,65,12,0.08),transparent_45%)]" />

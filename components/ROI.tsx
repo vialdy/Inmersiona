@@ -131,7 +131,7 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
       className={`relative overflow-hidden ${
         hideHeader 
           ? "bg-transparent" 
-          : "bg-gradient-to-br from-[#132339] via-[#0f1d30] to-[#0a1421]"
+          : "bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339]"
       }`}
     >
       {/* ═══════════════════════════════════════════════════════════════
@@ -245,7 +245,7 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
         <div className={`relative px-5 py-20 text-white sm:px-6 sm:py-24 lg:px-8 ${
           hideHeader 
             ? "bg-transparent" 
-            : "bg-gradient-to-br from-[#132339] via-[#0f1d30] to-[#0a1421]"
+            : "bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339]"
         }`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(194,65,12,0.06),transparent_40%)]" />
           
