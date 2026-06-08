@@ -196,3 +196,37 @@ body {
   will-change: transform, opacity;
 }
 
+/* Custom multi-stop easing gradients for section transitions */
+.transition-dark-to-light {
+  background: linear-gradient(
+    to bottom,
+    #0a1421 0%,
+    #0d1929 10%,
+    #13243a 22%,
+    #1b304a 35%,
+    #2c4462 48%,
+    #455f80 62%,
+    #6984a5 75%,
+    #9cb4d0 87%,
+    #d1e0f0 95%,
+    #ffffff 100%
+  );
+}
+
+.transition-light-to-dark {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #d1e0f0 5%,
+    #9cb4d0 13%,
+    #6984a5 25%,
+    #455f80 38%,
+    #2c4462 52%,
+    #1b304a 65%,
+    #13243a 78%,
+    #0d1929 90%,
+    #0a1421 100%
+  );
+}
+
+

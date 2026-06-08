@@ -11,9 +11,12 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1">
         <Hero />
+        <div className="h-32 sm:h-40 md:h-56 transition-dark-to-light" />
         <ValuePropositionSection />
         <Methodology />
+        <div className="h-32 sm:h-40 md:h-56 transition-light-to-dark" />
         <ROI hideCasesTable />
+        <div className="h-32 sm:h-40 md:h-56 transition-dark-to-light" />
         <ContactForm />
       </main>
     </div>
