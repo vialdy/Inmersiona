@@ -11,12 +11,12 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1">
         <Hero />
-        <div className="h-32 sm:h-40 md:h-56 transition-dark-to-light" />
+        <div className="h-32 sm:h-40 md:h-56 transition-dark-to-light-hero" />
         <ValuePropositionSection />
         <Methodology />
-        <div className="h-32 sm:h-40 md:h-56 transition-light-to-dark" />
+        <div className="h-32 sm:h-40 md:h-56 transition-light-to-dark-roi" />
         <ROI hideCasesTable />
-        <div className="h-32 sm:h-40 md:h-56 transition-dark-to-light" />
+        <div className="h-32 sm:h-40 md:h-56 transition-dark-to-light-roi" />
         <ContactForm />
       </main>
     </div>
