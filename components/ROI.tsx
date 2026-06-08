@@ -643,6 +643,13 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
           </div>
         </div>
       )}
+      {/* Top/Bottom transition gradients (only when hideHeader is false on homepage) */}
+      {!hideHeader && (
+        <>
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent pointer-events-none z-30" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none z-30" />
+        </>
+      )}
     </section>
   );
 }

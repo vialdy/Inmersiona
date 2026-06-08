@@ -36,7 +36,7 @@ export function ValuePropositionSection({ hideHeader = false }: ValueProposition
     <section
       id="value-proposition"
       aria-labelledby="value-title"
-      className="bg-white border-y border-[#dee6ed] px-5 py-20 text-[#132339] sm:px-6 sm:py-24 lg:px-8 overflow-hidden"
+      className="bg-white border-b border-[#dee6ed] px-5 py-20 text-[#132339] sm:px-6 sm:py-24 lg:px-8 overflow-hidden"
     >
       {/* Self-contained styling block for unique micro-animations and staggered fade-in */}
       <style>{`
