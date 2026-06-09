@@ -125,38 +125,66 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
   }, []);
 
   return (
-    <section
-      id="roi"
-      aria-labelledby="roi-title"
-      className={`relative overflow-hidden ${
-        hideHeader 
-          ? "bg-transparent" 
-          : "bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339]"
-      }`}
-    >
-      {/* ═══════════════════════════════════════════════════════════════
-          PHASE 1 — Cinematic Video Intro
-          ═══════════════════════════════════════════════════════════════ */}
-      {!showCalculator && (
+    <>
+      {/* Dynamic Top Spacer */}
+      {!hideHeader && (
+        <div className="relative h-32 sm:h-40 md:h-56">
+          <div className="absolute inset-0 transition-light-to-dark-roi-calc" />
+          <div
+            className={`absolute inset-0 transition-light-to-dark-roi-video transition-opacity duration-600 ease-in-out ${
+              showCalculator ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        </div>
+      )}
+
+      <section
+        id="roi"
+        aria-labelledby="roi-title"
+        className={`relative overflow-hidden ${
+          hideHeader 
+            ? "bg-transparent" 
+            : "bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339]"
+        }`}
+      >
+        {/* Dynamic Video background overlay inside the section */}
+        {!hideHeader && (
+          <div
+            className={`absolute inset-0 bg-gradient-to-b from-[#0b0d0d] via-[#0f1d30] to-[#132339] transition-opacity duration-600 ease-in-out z-0 ${
+              showCalculator ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        )}
+
+        {/* ═══════════════════════════════════════════════════════════════
+            PHASE 1 — Cinematic Video Intro
+            ═══════════════════════════════════════════════════════════════ */}
+        <div
+        className={`transition-all duration-600 ease-in-out ${
+          showCalculator
+            ? "absolute inset-0 z-0 opacity-0 pointer-events-none"
+            : "relative z-10 opacity-100"
+        }`}
+      >
         <ScrollReveal variant="fade">
           <div
             key={`video-${animKey}`}
             className="relative flex w-full min-h-screen items-center justify-center animate-fade-in-scale"
           >
-            {/* Background Video */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            >
-              <source src="/silueta.mp4" type="video/mp4" />
-            </video>
+              {/* Background Video */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              >
+                <source src="/silueta.mp4" type="video/mp4" />
+              </video>
 
-            {/* Dark overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1820]/90 via-[#132339]/60 to-[#132339]/40" />
+              {/* Dark overlay gradient matching #0b0d0d */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d0d]/95 via-[#0b0d0d]/60 to-transparent" />
 
             {/* Content overlay */}
             <div className="relative z-20 mx-auto flex w-full max-w-4xl flex-col items-center px-5 text-center sm:px-6 lg:px-8">
@@ -236,17 +264,19 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
             </div>
           </div>
         </ScrollReveal>
-      )}
+      </div>
 
       {/* ═══════════════════════════════════════════════════════════════
           PHASE 2 — Interactive Calculator + Comparison Table
           ═══════════════════════════════════════════════════════════════ */}
-      {showCalculator && (
-        <div className={`relative px-5 py-20 text-white sm:px-6 sm:py-24 lg:px-8 ${
-          hideHeader 
-            ? "bg-transparent" 
-            : "bg-gradient-to-b from-[#132339] via-[#0f1d30] to-[#132339]"
-        }`}>
+      <div
+        className={`transition-all duration-600 ease-in-out ${
+          showCalculator
+            ? "relative z-10 opacity-100"
+            : "absolute inset-0 z-0 opacity-0 pointer-events-none overflow-hidden"
+        }`}
+      >
+        <div className="relative px-5 py-20 text-white sm:px-6 sm:py-24 lg:px-8 bg-transparent">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(194,65,12,0.06),transparent_40%)]" />
           
           <div className="relative z-20 mx-auto w-full max-w-6xl">
@@ -642,7 +672,20 @@ export function ROI({ hideCasesTable = false, showCalculatorDirectly = false, hi
             )}
           </div>
         </div>
-      )}
+      </div>
     </section>
-  );
+
+    {/* Dynamic Bottom Spacer */}
+    {!hideHeader && (
+      <div className="relative h-32 sm:h-40 md:h-56">
+        <div className="absolute inset-0 transition-dark-to-light-roi-calc" />
+        <div
+          className={`absolute inset-0 transition-dark-to-light-roi-video transition-opacity duration-600 ease-in-out ${
+            showCalculator ? "opacity-0" : "opacity-100"
+          }`}
+        />
+      </div>
+    )}
+  </>
+);
 }

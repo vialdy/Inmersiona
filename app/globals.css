@@ -213,7 +213,7 @@ body {
   );
 }
 
-.transition-light-to-dark-roi {
+.transition-light-to-dark-roi-video {
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
@@ -225,14 +225,46 @@ body {
     #244f76 65%,
     #153a5a 78%,
     #0f2a45 90%,
-    #0d161f 100%
+    #0b0d0d 100%
   );
 }
 
-.transition-dark-to-light-roi {
+.transition-light-to-dark-roi-calc {
   background: linear-gradient(
     to bottom,
-    #0d161f 0%,
+    #ffffff 0%,
+    #e5eff7 5%,
+    #b9d0e5 13%,
+    #88aecd 25%,
+    #5d87b1 38%,
+    #3b6993 52%,
+    #244f76 65%,
+    #153a5a 78%,
+    #0f2a45 90%,
+    #132339 100%
+  );
+}
+
+.transition-dark-to-light-roi-video {
+  background: linear-gradient(
+    to bottom,
+    #0b0d0d 0%,
+    #0f2a45 10%,
+    #153a5a 22%,
+    #244f76 35%,
+    #3b6993 48%,
+    #5d87b1 62%,
+    #88aecd 75%,
+    #b9d0e5 87%,
+    #e5eff7 95%,
+    #ffffff 100%
+  );
+}
+
+.transition-dark-to-light-roi-calc {
+  background: linear-gradient(
+    to bottom,
+    #132339 0%,
     #0f2a45 10%,
     #153a5a 22%,
     #244f76 35%,
